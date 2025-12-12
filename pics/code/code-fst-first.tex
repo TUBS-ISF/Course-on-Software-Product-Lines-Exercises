@@ -1,0 +1,39 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{modernjava}{
+	language=Java,
+	tabsize=2,
+	breaklines=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+}
+
+\begin{document}
+	\begin{lstlisting}[style=modernjava]
+		class Game {
+			List<Player> players 
+			 = new ArrayList<>();
+			
+			void addPlayer(Player p) {
+				players.add(p);
+			}
+			
+			void start() {
+				original();
+				for (Player p 
+				 : players) {
+				 prt(p
+				     + 
+				     " has joined.");
+				}
+			}
+		}
+	\end{lstlisting}
+\end{document}

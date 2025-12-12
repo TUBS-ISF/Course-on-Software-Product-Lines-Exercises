@@ -1,0 +1,292 @@
+\deftask{EvonanceMaintenanceEvolution}
+{\t{Maintenance, Evolution, and Co-Evolution in Product Lines}{Wartung, Evolution und Co-Evolution in Produktlinien}}{
+	\begin{enumerate}
+		\item \t{
+			Explain the difference between maintenance and evolution in general, as well as in the context of software product lines.
+			Also, explain the role and importance of co-evolution in software product lines.
+			Use concrete examples to illustrate your answer.
+		}{
+			Erkläre den Unterschied zwischen Wartung und Evolution im Kontext von Software-Produktlinien (SPLs).
+			Erkläre außerdem die Rolle und Bedeutung von Co-Evolution in Software-Produktlinien.
+			Verwende konkrete Beispiele, um deine Antwort zu veranschaulichen.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Classify the following examples based on their maintenance type.
+			Justify your answers.
+		}{
+			Klassifiziere die folgenden Beispiele nach ihrer Kategorie von Wartungsmaßnahmen.
+			Begründe deine Antworten.
+		}
+		\begin{enumerate}
+			\item \t{
+				The feature \texttt{OfflineMode} allows users to access content without an internet connection.
+				After deployment, a crash is reported when users try to sync data upon reconnecting.
+				The bug is fixed in a patch release.
+			}{
+				Das Feature \texttt{OfflineMode} ermöglicht es Nutzern, auf Inhalte ohne Internetverbindung zuzugreifen.
+				Nach der Bereitstellung wird ein Absturz gemeldet, wenn Nutzer versuchen, Daten beim Wiederverbinden zu synchronisieren.
+				Der Fehler wird in einem Patch-Release behoben.
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+
+			\item \t{
+				The application is being migrated from Android 12 to Android 14.
+				Some APIs used for notifications have changed, requiring adjustments in the source code to ensure compatibility.
+			}{
+				Die Anwendung wird von Android 12 auf Android 14 migriert.
+				Einige für Benachrichtigungen verwendete APIs haben sich geändert, was Anpassungen im Quellcode erfordert, um die Kompatibilität sicherzustellen.
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+
+			\item \t{
+				Users have complained that the application takes too long to start.
+				The development team optimizes the loading process by reducing startup dependencies and lazy-loading non-critical modules.
+			}{
+				Nutzer haben sich beschwert, dass die Anwendung zu lange zum Starten braucht.
+				Das Entwicklungsteam optimiert den Ladevorgang, indem es Startabhängigkeiten reduziert und nicht-kritische Module verzögert lädt.
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+
+			\item \t{
+				To proactively detect potential memory issues, the team adds a logging and diagnostic module that tracks performance degradation over time, even though no crash has been observed yet.
+			}{
+				Um potenzielle Speicherprobleme proaktiv zu erkennen, fügt das Team ein Logging- und Diagnosemodul hinzu, das die Leistungsverschlechterung im Laufe der Zeit verfolgt, obwohl bisher kein Absturz beobachtet wurde.
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+		\end{enumerate}
+	\end{enumerate}
+}
+
+\deftask{EvonanceFeatureModelEvolution}
+{\t{Evolution of Feature Models}{Evolution von Feature-Modellen}}{
+	\t{
+		Consider the following initial feature model:
+	}{
+		Gegeben sei das folgende initiale Feature-Modell:
+	}
+
+	\myexample{\t{Initial Feature Model}{Initiales Feature-Modell}}{
+		\centering\sffamily
+		\featureDiagram{
+			App,abstract
+			[Chat,optional,concrete]
+			[Storage,mandatory,abstract
+			[SQLite,alternative,concrete]
+			[Room,concrete]]
+			[Authentication,mandatory,abstract
+			[SimpleLogin,alternative,concrete]
+			[OAuth,concrete]]
+		}\\
+		$\text{Chat} \pimplies \text{SQLite}$ \\
+	}
+
+	\begin{enumerate}
+		\item \t{
+			Starting from this initial feature model, the following changes are applied step by step.
+			For each of the following steps, classify the change compared to the previous step as a \emph{refactoring}, \emph{specialization}, \emph{generalization}, or \emph{arbitrary edit}.
+			Justify your answer.
+		}{
+			Ausgehend von diesem initialen Feature-Modell werden die folgenden Änderungen Schritt für Schritt vorgenommen.
+			Klassifiziere für jeden folgenden Schritt die Änderung im Vergleich zum vorherigen Schritt als \emph{Refaktorisierung}, \emph{Spezialisierung}, \emph{Generalisierung} oder \emph{Arbitrary Edit} (also eine willkürliche Änderung).
+			Begründe deine Antwort.
+		}
+		
+		\myexample{\t{State After Change 1}{Zustand nach Änderung 1}}{
+			\centering\sffamily
+			\featureDiagram{
+				App,abstract
+				[Storage,mandatory,abstract
+				[SQLite,alternative,concrete
+				[Chat,mandatory,concrete]]
+				[Room,concrete]]
+				[Authentication,mandatory,abstract
+				[SimpleLogin,alternative,concrete]
+				[OAuth,concrete]]
+			}
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		\myexample{\t{State After Change 2}{Zustand nach Änderung 2}}{
+			\centering\sffamily
+			\featureDiagram{
+				App,abstract
+				[Storage,mandatory,abstract
+				[SQLite,alternative,concrete]
+				[Room,concrete]]
+				[Authentication,mandatory,abstract
+				[SimpleLogin,alternative,concrete]
+				[OAuth,concrete]]
+			}
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		\myexample{\t{State After Change 3}{Zustand nach Änderung 3}}{
+			\centering\sffamily
+			\featureDiagram{
+				App,abstract
+				[Storage,mandatory,abstract
+				[SQLite,alternative,concrete]
+				[Room,concrete]]
+				[DarkMode,optional,concrete]
+				[Authentication,mandatory,abstract
+				[SimpleLogin,alternative,concrete]
+				[OAuth,concrete]]
+			}
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		\myexample{\t{State After Change 4}{Zustand nach Änderung 4}}{
+			\centering\sffamily
+			\featureDiagram{
+				App,abstract
+				[Storage,mandatory,abstract
+				[Room,optional,concrete]
+				[SQLite,optional,concrete]]
+				[Authentication,mandatory,abstract
+				[OAuth,mandatory,concrete]]
+				[DarkMode,optional,concrete]
+			} \\
+			$\text{OAuth} \pimplies \text{Room}$ \\
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			In general, how can you compute the classification of the four edit types using a SAT solver?
+		}{
+			Wie kann man allgemein die Klassifizierung der vier Arten von Änderungen mit einem SAT-Solver berechnen?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{EvonanceRefactoring}
+{\t{Code Smells and Refactoring}{Code Smells und Refactoring}}{
+	\begin{enumerate}
+		\item \t{
+			What is a code smell?
+			Explain the term and give at least three examples of code smells.
+			Also research and explain the term \emph{variability smell} in the context of software product lines and give at least three examples.
+		}{
+			Was ist ein \emph{Code Smell}?
+			Erläutere den Begriff und nenne mindestens drei Beispiele für Code Smells.
+			Recherchiere und erkläre außerdem den Begriff \emph{Variability Smell} im Kontext von Softwareproduktlinien und nenne mindestens drei Beispiele.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			What is a refactoring?
+			What are the goals of refactorings, and why are they sometimes necessary?
+			Which kinds of refactorings of source code do you know?
+			Explain the refactorings with different examples.
+		}{
+			Was ist eine Refaktorisierung (oder \emph{Refactoring})?
+			Erläutere die Ziele von Refaktorisierungen und warum sie manchmal notwendig sind.
+			Welche Refaktorisierungen von Quelltext kennst du?
+			Erkläre die Refaktorisierungen an verschiedenen Beispielen.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{EvonanceReengineering}
+{\t{Reengineering Variants into a Software Product Line}{Reengineering von Varianten in eine Software-Produktlinie}}{
+	\t{
+		You are a software engineer at an educational tech company.
+		Your team is tasked with merging four independently developed school apps into a unified software product line.
+	}{
+		Du bist Software Engineer bei einem Bildungstechnologie-Unternehmen.
+		Dein Team soll vier unabhängig entwickelte Schul-Apps zu einer einheitlichen Software-Produktlinie zusammenführen.
+	}
+	
+	\t{
+		All four apps share the following common base features:
+	}{
+		Alle vier Apps teilen die folgenden gemeinsamen Basisfunktionen:
+	}
+	\begin{itemize}
+		\item \t{User management (login, account settings)}{Benutzerverwaltung (Login, Kontoeinstellungen)}
+		\item \t{Basic content delivery (course materials, videos)}{Grundlegende Inhaltsbereitstellung (Kursmaterialien, Videos)}
+		\item \t{Student progress tracking}{Verfolgung des Lernfortschritts}
+	\end{itemize}
+
+	\t{
+		However, each app was individually extended to meet specific customer needs:
+	}{
+		Jede App wurde jedoch individuell erweitert, um spezifische Kundenanforderungen zu erfüllen:
+	}
+	\begin{itemize}
+		\item \t{
+			\textbf{App A}: Android only. Uses \texttt{SQLite} for local storage and supports offline access.
+		}{
+			\textbf{App A}: Nur Android. Verwendet \texttt{SQLite} für lokale Speicherung und unterstützt Offline-Zugriff.
+		}
+		\item \t{
+			\textbf{App B}: Web-based. Adds a real-time chat system but does not support offline mode.
+		}{
+			\textbf{App B}: Webbasiert. Fügt ein Echtzeit-Chat-System hinzu, unterstützt aber keinen Offline-Modus.
+		}
+		\item \t{
+			\textbf{App C}: Android and iOS. Uses the \texttt{Room} database. Provides parental control but does not support chat.
+		}{
+			\textbf{App C}: Android und iOS. Verwendet die \texttt{Room}-Datenbank. Bietet eine Kindersicherung, unterstützt aber keinen Chat.
+		}
+		\item \t{
+			\textbf{App D}: Android only. Supports both chat and offline mode, but uses a hardcoded login mechanism.
+		}{
+			\textbf{App D}: Nur Android. Unterstützt sowohl Chat als auch Offline-Modus, verwendet aber einen hartcodierten Login-Mechanismus.
+		}
+	\end{itemize}
+
+	\t{
+		Each of these apps originated from the same codebase, but has been modified separately over time.
+	}{
+		Jede dieser Apps stammt ursprünglich aus derselben Codebasis, wurde aber im Laufe der Zeit separat angepasst.
+	}
+	
+	\begin{enumerate}
+		\item \t{
+			Identify and describe one concrete reengineering task for each of the following categories: reverse engineering, refactoring, and forward engineering.
+			In total, you should describe three tasks (one from each category), that are required to transform the existing variants into a unified software product line.
+		}{
+			Identifiziere und beschreibe eine konkrete Reengineering-Aufgabe für jede der folgenden Kategorien: Reverse Engineering, Refactoring und Forward Engineering.
+			Insgesamt solltest du drei Aufgaben beschreiben (eine aus jeder Kategorie), die erforderlich sind, um die vorhandenen Varianten in eine einheitliche Software-Produktlinie umzuwandeln.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			What product-line adoption strategy does this scenario represent?
+			Justify your answer.
+		}{
+			Welche Produktlinien-Adoptionsstrategie repräsentiert dieses Szenario?
+			Begründe deine Antwort.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}

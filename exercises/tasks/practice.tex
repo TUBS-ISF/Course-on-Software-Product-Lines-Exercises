@@ -1,0 +1,365 @@
+% Practical tasks in use at TU Braunschweig
+
+\deftask{PracticeAccessCalculatorGit}
+{Getting Access to the Repository}{
+\textbf{Important:} This requires manual processing by our side.
+Please reach out early to get access on time.
+
+Before you can start to develop a new feature, you need access to your own repository.
+To get access, please login to the GITZ Gitlab\footnote{\url{https://git.rz.tu-bs.de}} once using GITZ account.
+Then, write an email to Marco (\href{mailto:REDACTED?subject=[SPL] Access to Calculator Repository}{REDACTED} \textit{Subject:}[SPL] Access to Calculator Repository) with your official \textbf{TU Braunschweig email} address, containing your
+\begin{itemize}
+\item \textbf{full name},
+\item Gitlab \textbf{account name},
+\item \textbf{registration number} (Matrikelnummer), and
+\item \textbf{course of study} (Studiengang).
+\end{itemize} 
+We will then send you back an email with the URL to your own repository.
+}
+
+\deftask{PracticeSetupCalculatorGit}
+{Getting Started}{
+1  For this and following tasks, you need Java\footnote{\url{https://openjdk.org/}} (17+) and Maven\footnote{\url{https://maven.apache.org/}}.
+  While this task can be completed with any IDE or text editor, we advise you to use Eclipse\footnote{\url{https://www.eclipse.org/}} because future tasks require Eclipse.
+  You can find an Eclipse version with Java development support for Linux, Windows, or Mac here.\footnote{\url{https://www.eclipse.org/downloads/packages/}}
+
+   Please clone your repository from the URL provided by us (see Task 1) using a git client of your choice\footnote{
+     In case you are unfamiliar with Git, we recommend you to get familiar with the basics of Git.
+   	There are numerous tutorials, guides, and talks online in text as well as video format.
+     Git is a version control system with many helpful features next to serving as a plain submission system for this course.
+   	To install Git for your system, you can follow the official instructions: \url{https://git-scm.com/downloads}.
+     Windows users should also install Git-Bash and integration for external programs.
+   	In your terminal (or Git-Bash on Windows) you can check whether you have installed Git correctly via \texttt{git -{}-version}.
+     }.
+     Using a terminal, you can navigate to a directory of your choice and execute the following command
+       \begin{itemize}\small
+         \commandItem{git clone <Your Git URL>}
+         \explanationItem{%
+     		  This copies the content of the Git repository to your local hard drive.
+     		}
+     		\end{itemize}
+ 	After cloning open the \texttt{README.md} file.
+ 	This file contains instructions on how to build and run the project, and how to import the project into Eclipse.
+ 	Follow these setup steps and run the Calculator.
+ 	You should see a small window, which implements the calculator.
+  % If you are using Eclipse, open Eclipse, then import the Java project by \textit{File} $\rightarrow$ \textit{Import} $\rightarrow$ \textit{General} $\rightarrow$ \textit{Existing Projects into Workspace}.
+  % Instructions to build and run the project, as well as more detailed instructions for importing can be found in the \texttt{README.md} of the project.
+}
+
+\deftask{PracticeDevelopCalculatorFeature}
+{Develop a New Feature}{
+	Currently, our calculator is very limited in terms of features.
+	We can only perform simple addition and multiplication.
+	As the first task, we want you to include an additional feature to the calculator.
+	Hereby, a feature could be any functionality you would like to have.
+	Some examples are:
+	\begin{itemize}
+		\item New arithmetic operators (e.g., division, logarithm)
+		\item Usability features (e.g., undo)
+		\item User interface features (e.g., styling buttons)
+	\end{itemize}
+
+	When you are done, \textbf{open the \texttt{README.md} file (e.g., in a text editor) and document} at the bottom of the file which feature you added to the calculator.
+	Provide the feature's name and a short description (1-2 sentences).
+}
+
+\deftask{PracticeDeleteCalculatorFeature}
+{Delete an Existing Feature}{
+	\textit{Do I really need this feature?} For this task, we want you to remove a feature.
+	To do so, we first need to identify existing features.
+	Your task is to identify the features, choose one of them, and remove it from the source code.
+	Make sure to fully remove the respective source code (i.e., remove respective code fragments from every affected source file).
+
+	When you are done, \textbf{open the \texttt{README.md} file (e.g., in a text editor) and document} at the bottom of the file which feature you removed from the calculator.
+	Provide the feature's name and a short description (1-2 sentences).
+}
+
+\deftask{PracticeSubmitCalculator}
+{Submit Your Results}{
+  Once you finished the previous tasks, submit your adapted calculator by the submission deadline.
+%  To submit, we use Git and Gitlab.
+	You must push your calculator to your Git repository, which we prepared for you in the GITZ Gitlab\textsuperscript{6}.
+%  You will soon receive an e-mail which notifies you that you have been granted access to your repository.
+%  Once you got access to your repository, you can push your changes.
+You can do this with the git client of your choice.
+Using a terminal, you can navigate to the directory containing your calculator and follow these steps:
+  \begin{itemize}\small
+%    \commandItem{git init -{}-initial-branch=main}
+%    \explanationItem{%
+%		  This tells Git that you want the current directory to become a repository and that your changes will be tracked in a branch called "main".
+%			If you do not yet know what a branch is don't worry, it is not necessary to know for this task.
+%		}
+    \commandItem{git add .}
+    \explanationItem{Stage all current files for submission.}
+    \commandItem{git commit -m "<message>"}
+    \explanationItem{Commit the changes, i.e., bundle them and treat them as a single change. You must replace \texttt{<message>} by a message of your choice (e.g., \texttt{initial commit}).}
+    % \item[] \texttt{git branch -M main}
+		% \explanationItem{
+			% This tells Git that you want to track your changes on a branch called "main".
+			% If you do not yet know what a branch is don't worry, it is not necessary to know for this task.
+			% }
+% 	  \commandItem{git remote add origin <url>}
+%    \explanationItem{%
+%      This tells Git that there is a remote version of the repository in the Gitlab of the Department for Computer Science.
+%      You have to replace \texttt{<url>} by the URL of your Gitlab repository.
+%      To find that URL, open the Gitlab website and navigate to your repository.
+%      Then click on the \textcolor{blue}{blue \texttt{Code}} button on the top right to reveal the SSH and HTTPS urls.
+%			The urls should look similar to this\\
+%			\parbox{2cm}{SSH:} \texttt{...}\\
+%			\parbox{2cm}{HTTPS:} \texttt{...}\\
+%      where \texttt{X} is replaced by a certain number.
+%      You can use either SSH or HTTPS to connect to your Gitlab remote repository.
+%			Both is fine but we recommend SSH because with HTTPS you must enter your credential whenever you want to push.
+%			You can find instructions for setting up SSH communication here: \url{https://docs.gitlab.com/ee/user/ssh.html}.
+%      }
+  	\commandItem{git push -u origin main}
+		\explanationItem{%
+		  Push your changes to the Gitlab repository.
+			There might be a warning "\texttt{The authenticity of host 'git.rz.tu-bs.de' can't be established}".
+			When the question "\texttt{Are you sure you want to continue connecting (yes/no/[fingerprint])?}" appears, simply type \texttt{yes} and press "enter".
+			If this is successful, you are done. :)
+			You should also be able to see your code on the GitLab website now.
+			}
+  \end{itemize}
+}
+
+\deftask{PracticeIntegrateOtherFeature}
+{Integrate Feature Developed by Fellow Student}{
+	The other students developed some fancy features as well.
+	Further improve your calculator by integrating a feature developed by a fellow student.
+
+	You have been granted read access to two repositories of your fellow students (if not yet, you should receive an e-mail soon).
+	Similar to your repository, these repositories are called \texttt{Calculator}$n$ and \texttt{Calculator}$m$, where $n, m \in \mathbb{N}, n \neq m$.
+	One of these repositories has a smaller number and one of them has a larger number.
+	For the rest of this sheet, we hence assume $n < m$.
+	Similar to your calculator, these calculators implemented a new feature as well.
+
+	For this task, we want you to integrate the feature developed in \texttt{Calculator}$n$ (with the smaller number) to your project.
+	Therefore, you should clone the \texttt{Calculator}$n$ repository, locate the added feature (hint: look at the \texttt{README.md} file of your fellow student) and integrate the respective changes to your calculator, too.
+	You may run your peer's calculator first, to have a look at their new feature.
+	While working on the integration, make notes on your experience and, in particular, on the pitfalls that came up (cf.\ Exercise 3).
+	When you run your calculator afterwards, it should contain both your initial feature as well as the new one from your fellow student, and both features should behave as intended.
+	Note that the other branch may have developed the same feature as you did.
+	In this case, carefully check if your implementation fully covers the changes made by your colleague.
+
+	Afterward, go back to your \texttt{README.md} and also document the feature you added, similar as you did for your initial feature in the first task.
+	If you did not adapt the implementation because you already implemented the feature, also clarify this in the \texttt{README.md}.
+
+	\textbf{Important:} The updated source code and \texttt{README.md} need to be pushed to \emph{your} repository by the submission deadline.
+}
+
+\deftask{PracticeRemoveOtherFeature}
+{Remove Feature Excluded by Fellow Student}{
+	Each student also removed one feature from their calculator.
+	Follow the lead of one of your peers and also remove the corresponding feature by applying the changes they made for the removal.
+	For this task, use the other repository you have been granted read access to (i.e., \texttt{Calculator}$m$, where $m$ is the larger number).
+	Locate the feature removal (hint: look at the \texttt{README.md} file of your fellow student) and integrate the respective changes to your calculator.
+	While working on the integration, make notes on your experience and, in particular, on the pitfalls that came up (cf. Exercise 3).
+	Be careful of interactions with the previous changes to your calculator.
+	Note that the other branch may have removed the same feature as you did.
+	In this case, carefully check if your implementation fully covers the changes made in their branch.
+
+	Update the \texttt{README.md} to also indicate the second feature you deleted, analogous to the first task.
+	If you did not adapt the implementation because you already removed the same feature, also clarify this in the \texttt{README.md}.
+
+	\textbf{Important:} The updated source code and \texttt{README.md} need to be pushed to \emph{your} repository by the submission deadline.
+}
+
+\deftask{PracticeCalculatorShareExperiences}
+{Discuss your experience}{
+	In the corresponding exercise, we want to discuss the experiences when integrating other features.
+	Please prepare answers to the following questions for the discussion:
+	\begin{enumerate}
+		\item Did you need to edit the same part of the source code for multiple features?
+		\item Which problems came up when integrating or removing other features?
+		\item Could those problems have been avoided? If so, how?
+		\item Do you think that your initially implemented feature was easy to integrate? Why?
+	\end{enumerate}
+}
+
+\deftask{PracticeDevelopSPLsIntroduction}
+{Introduction}{
+	The aim of the remaining practical tasks is to gain experience with various implementation techniques for software product lines.
+	You are free to choose the domain to be implemented as long as it meets the following criteria:
+	\begin{itemize}
+		\item The domain contains at least 20 features.
+		\item At least 10 of these features can be implemented with reasonable effort (e.g., 5--10 lines of code per feature).
+	\end{itemize}
+
+	When selecting the domain, it is permitted to use existing source code as long as it is not yet available as a software product line.
+	For example, you can build on Java projects from previous courses or existing open source projects.
+	As a programming language you must use Java, as it has the best tool support the upcoming implementation techniques.
+	Your domain should describe a \emph{software} product line so that it can be implemented as a software tool or library later.
+	(In particular, the domain should not be for a \emph{hardware} product lines such as sandwiches, bikes, or cars which cannot be realized as pure software.)
+
+	The tasks will be implemented with FeatureIDE, a development tool for software product lines.
+	To get FeatureIDE, head to its website\footnote{\url{https://featureide.github.io/}} and scroll down to the \emph{Downloads} section and look for the \emph{Prepackaged Versions}.
+	There is a table with downloads of prepackaged Eclipse IDEs with certain versions of Eclipse.
+	Download \emph{Eclipse with FeatureIDE, JDT, CDT, and AJDT} with the newest version of FeatureIDE (first row) for your operating system.
+
+	A separate FeatureIDE project must be created for each practical task.
+	Make sure that you always create a new project and do not simply modify the previous one.
+	You should think of a project name that is as unique as possible to avoid conflicts with your fellow students.
+
+	To submit your solution, you will be granted access to a new Gitlab repository soon.\footnote{If you did not get access yet, please wait a day or two. Otherwise, you might have failed the first two practical tasks. If in doubt, send an e-mail to
+	\href{mailto:REDACTED?subject=[SPL] Question}{REDACTED}}.
+	For checking your submissions and for easy comparison in the exercise \textbf{each project must be named according to the naming pattern \texttt{[project name]-Task[task number]}}!
+	For example, if your domain is called \texttt{VideoPlayer}, then the project of the first practical task \textbf{must} be called \texttt{VideoPlayer-Task1}, and after having done all tasks, the top level directory of your repository should look like this:
+
+	\begin{center}
+	\includegraphics[width=0.7\linewidth]{expected_repo_root}
+	\end{center}
+
+	where again \texttt{VideoPlayer} would be replaced by the name of your domain.
+	Each directory \texttt{VideoPlayer-TaskN} contains the FeatureIDE project of the respective task.
+
+	\textbf{Except for Tasks 1 and 2, each submission must have a README file with the following contents:}
+	\begin{itemize}
+		\item \textbf{Encountered Bugs} in your own project (or FeatureIDE).
+			Fixing those bugs is not mandatory.
+			%		\item welche der als konkret markierten Features sie in dieser Aufgabe neu implementiert haben und welche Sie aus vorherigen Aufgaben angepasst oder übernommen haben.
+		\item Instructions on how you to start and operate your program.
+			Name the location of your \texttt{main} method, including \textbf{package name and class name}!
+			For example, if the \texttt{main} method is in the \texttt{Start} class in the \texttt{en.upb.spl} package, please reference \texttt{en.uulm.spl.Start} in your README.
+		\item If you are building on existing software, please specify its \textbf{source} (e.g., link to website, repository, or archive) and \textbf{license}.
+	\end{itemize}
+}
+
+\deftask{PracticeDevelopSPLDomainAnalysis}
+{Domain Analysis}{
+	The first task is to carry out a domain analysis and document the result in a feature diagram using FeatureIDE:
+	\begin{itemize}
+		\item Create a new FeatureIDE project for this (Composer: \texttt{Feature Modeling}).
+		\item In the feature diagram, create at least 20 features and enter a short description for each, using the context menu entry \texttt{Change Description}.
+		\item Create at least \textbf{five} typical configurations for your domain.
+	\end{itemize}
+	\textbf{In later tasks, only letters are allowed in feature names and other characters should be avoided}.
+
+	In the exercise, you will be asked to briefly introduce your domain.
+	How did you go about deriving the five typical configurations?
+	Why did you choose this domain?
+	Is there already an implementation that you would like to use?
+}
+
+\newcommand{\markabstract}{%
+	Mark the features you implemented in the feature model as concrete and all other features as abstract.
+}
+\newcommand{\test}{%
+	Test your implementation with the five typical configurations and document any \textbf{errors found} in the README file for this task.
+	Fixing the errors is optional.
+}
+\newcommand{\reimplementOldFeatures}{%
+	These should also include the features from the previous tasks.
+	In any case, avoid mixing different implementation techniques so that all implemented features can be selected via the configurations in FeatureIDE.
+}
+\newcommand{\experiences}{%
+	In this exercise, we are interested in your \textbf{experience}.
+	What errors did you find during testing?
+}
+
+\deftask{PracticeDevelopSPLRuntimeVariability}
+{Runtime Variability}{
+	Implement the variability of the previously modeled domain using runtime parameters.
+	It should be possible to select and deselect \textbf{at least 2 features} of your domain using \textbf{parameters of the \texttt{main} method}.
+	\markabstract{}
+	\test{}
+
+	The application should be developed as a \textbf{FeatureIDE project} (Composer: \texttt{Runtime Parameters}) or as a \textbf{Java project} in Eclipse.
+	\texttt{HelloWorld-RuntimeProperties} and \texttt{HelloWorld-RuntimeParameters} are example projects that present two possible options for implementing variability with runtime parameters in FeatureIDE.
+	Screencasts are also available.\footnote{\url{https://www.youtube.com/watch?v=LjGonbYD7Po} and \url{https://www.youtube.com/watch?v=JxejI0Abtn4}}
+	There is currently slightly better tool support for properties (e.g.\ coloring of source code, collaboration diagram).
+
+	Please make sure that your changes have actually been uploaded to the repository, including the \texttt{.project} file (e.g.\ \texttt{push} in Git).
+
+	\experiences{}
+	How did you program your application?
+	Did you develop the parameters one after the other?
+	Which of the five configurations behave identically?
+}
+
+\deftask{PracticeDevelopSPLPreprocessing}
+{Preprocessors}{
+	Implement the variability of the previously modeled domain with the preprocessor.
+	It should be possible to select and deselect \textbf{at least 4 features} of your domain.
+	\reimplementOldFeatures{}
+	Make use of the advantages of preprocessors compared to runtime parameters.
+	Do not simply replace every \texttt{if} statement by a preprocessor annotation!
+	Can you avoid dead code?
+
+	Develop your application as a \textbf{FeatureIDE project} (Composer: \texttt{Antenna}) in Eclipse.
+	Document again in the feature diagram which features are already used in the implementation: Mark all features as \textbf{abstract} that are not implemented or do not require artifacts.
+	Mark all features as \textbf{concrete} that actually appear in preprocessor directives.
+
+	\test{}
+	How did you localize places where the new features had to be inserted?
+	Are there nested annotations?
+	What is the maximum number of annotations for a feature?
+	Did you find any complicated presence conditions?
+}
+
+\deftask{PracticeDevelopSPLBlackboxFramework}
+{Black-Box Frameworks}{
+	Implement the variability of the previously modeled domain as a framework.
+	It should be possible to select and deselect \textbf{at least 6 features} of your domain.
+	\reimplementOldFeatures{}
+	\markabstract{}
+	\test{}
+
+	Develop your application as a \textbf{FeatureIDE project} (Composer: \texttt{Framework}) or in a (plain) \textbf{Java project} in Eclipse.
+	If you use a Java project, it should be possible to adapt the configuration by either (1) specifying selected features as command-line arguments (for the \texttt{main} method) or (2) by commenting out \textbf{a single line} per feature, which adds the selected features plugin to a list of selected plugins, in the \texttt{main} method (i.e.\ no plugin loader needs to be implemented).
+
+	If possible, avoid creating a separate interface for each feature.
+	However, not all plugins should be integrated via a single interface.
+	(If you encounter problems with the plugin loader of the FeatureIDE composer, please use the Q\&A forum or switch to a plain Java project.)
+
+	\experiences{}
+	How time-consuming is it to create plugins?
+	How often did you have to adapt the framework or the interfaces afterwards?
+	How many interfaces are there in your implementation?
+	What adjustments might be necessary when adding further plugins?
+}
+
+% Practical task in use at University of Magdeburg
+
+\deftask{PracticeDevelopSPL}
+{Implementierung einer Software-Produktlinie}{
+	\emph{Für Bachelorstudierende ist diese Aufgabe fakultativ (Bonus von +5 Votierungspunkten).}
+
+	Das Ziel dieser Aufgabe ist es, Erfahrungen mit einer (oder mehreren) Implementierungstechnik für Software-Produktlinien zu sammeln.
+	Deine Lösung sollte den folgenden Kriterien entsprechen.
+	Bei Fragen gilt: Bitte melde dich so früh wie möglich.
+	\begin{itemize}
+		\item \textbf{Implementierungstechnik}~~
+		Du kannst frei aus folgenden Implementierungstechniken wählen:
+		Laufzeitvariabilität (z.B. Parameter oder Design Patterns), Prä\-prozessoren, Buildsysteme, Komponenten, Services, Frameworks, Feature-orien\-tier\-te Programmierung und aspektorientierte Programmierung.
+		Wo du es für sinnvoll und technisch umsetzbar hältst, sind auch Kombinationen erlaubt.
+		Mit Absprache sind auch andere Ansätze erlaubt.
+		Clone-and-Own ist bei dieser Aufgabe unerwünscht -- das macht ihr nach dem Studium noch genug \faSmileWink[regular]
+		\item \textbf{Werkzeuge}~
+		Dir steht frei, welche konkreten Werkzeuge du zur Umsetzung wählst.
+		Auch die Programmiersprache kannst du frei wählen.
+		Wichtig ist, dass der Code am Ende ausführbar ist und ``auf Knopfdruck'' verschiedene Produkte generiert werden können.
+		Gängige Werkzeugkombinationen könnten zum Beispiel sein: FeatureIDE + Java + \ldots, C + KConfig + KBuild oder AspectJ + Java.
+		\item \textbf{Domäne}~~
+		Du kannst die Domäne frei wählen, es soll sich aber explizit \emph{nicht} um ein Beispiel aus der Vorlesung oder einer der Übungsaufgaben handeln (also z.B. keine Graphbibliotheken, Taschenrechner oder FeatureIDE-Beispiele).
+		Hier ein paar Anregungen in Form von Domänen, die in früheren Jahren von Studierenden verwendet wurden:
+		Shopping, Spiele (z.B. Text-Adventures, Tic Tac Toe, \ldots), Wetter, das römische Reich, Kalender, Datum/Uhrzeit, Arduino-Sensordaten, \ldots
+		\item \textbf{Features}~~
+		Deine Software-Produktlinie sollte $\ge 10$ Features enthalten, die jeweils sowohl an- als auch abwählbar (also frei von Anomalien) sind.
+		Nicht alle diese Features sollten vollständig optional und unabhängig sein, d.h. es sollte auch Features geben, die von anderen Features abhängen oder anderweitige Constraints erfordern.
+		Diese Constraints sollten im Code berücksichtigt werden (z.B. durch ein Feature-Modell, falls du ein solches verwendest), so dass keine ungültigen Produkte generiert werden können.
+		Es sollte aber auch nicht so viele Constraints geben, dass nur sehr wenige Produkte generiert werden können.
+		\item \textbf{Code}~~
+		Deine Lösung sollte $\ge 1000$ selbst geschriebene \emph{source lines of code} (SLOC) enthalten.
+		Ob der Code explizit für diese Lehrveranstaltung geschrieben wurde oder ob du auf bestehenden Code zurückgreifst, ist unerheblich.
+		Wichtig ist, dass es \emph{dein} Code ist (u.a. kein KI-generierter Code, kein fremder Code aus dem Internet oder von Kommiliton*innen -- unter Vorbehalt einer Nachprüfung).
+		Am einfachsten ist es, ein komplett neues Projekt zu beginnen.
+		Es bietet sich aber auch an, Code aus früheren Lehrveranstaltungen zu ``Produktlinien-fizieren'', also nach den in der Lehrveranstaltung dargestellten Prinzipien konfigurierbar zu machen.
+		\item \textbf{Abgabe und Vorstellung}~~
+		Der Code kann als Anhang per Mail oder als Weblink abgeschickt werden.
+		In jedem Fall ist Git zur Versionsverwaltung zu verwenden und der \texttt{.git}-Ordner mit abzugeben.
+		Bitte vermeide, nur einen Commit zu erzeugen, damit die Autorenschaft besser nachvollziehbar ist.
+		Bereite dich außerdem darauf vor, deine Lösung kurz in der Übung vorzustellen (d.h., den Code ausführen, Produkte konfigurieren, und deine Vorgehensweise erläutern).
+		Sowohl Abgabe als auch Vorstellung sind zur erfolgreichen Bearbeitung der Aufgabe notwendig.
+	\end{itemize}
+}

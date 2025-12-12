@@ -1,0 +1,232 @@
+\deftask{ModularFundamentals}
+{\t{Modular Design Principles}{Modulare Design-Prinzipien}}{
+	\begin{enumerate}
+		\item \t{
+			Explain the terms \emph{modularity}, \emph{cohesion}, \emph{coupling}, and \emph{encapsulation}.
+			How are they related?
+		}{
+			Erkläre die Begriffe \emph{Modularität}, \emph{Kohäsion}, \emph{Kopplung} und \emph{Kapselung}.
+			Wie hängen sie zusammen?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Consider the following implementation.
+		}{
+			Betrachte die folgende Implementierung.
+		}
+
+		\myexample{\t{Change Implementation Example}{Beispiel einer Change-Implementierung}}{
+			\includegraphics[scale=1.1]{code-java-tangled-render}
+		}
+
+		\begin{enumerate}
+			\item[(i)] \t{
+				Describe the code's cohesion and coupling characteristics.
+			}{
+				Beschreibe, inwiefern der Code Kohäsion und Kopplung aufweist.
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+
+			\item[(ii)] \t{
+				Propose a modular redesign that addresses the problems identified above.
+				In your solution, also explain why modularization is beneficial in this context.
+				How could your design support product line variants such as \texttt{UndoSupport}?
+			}{
+				Schlage ein modulares Redesign vor, das die oben identifizierten Probleme adressiert.
+				Erkläre in deiner Lösung auch, warum Modularisierung in diesem Kontext vorteilhaft ist.
+				Wie könnte dein Design Produktlinien-Varianten wie \texttt{UndoSupport} unterstützen?
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+		\end{enumerate}
+	\end{enumerate}
+}
+
+\deftask{ModularComponentGranularity}
+{\t{Component Granularity and Library Scaling}{Komponentengranularität und Library Scaling}}{
+	\t{
+		You are developing a sensor-based embedded system that supports multiple hardware devices.
+		Some sensors provide only temperature (in Celsius or Kelvin), others only air pressure (in Bar or Pascal), and a few support both.
+		However, not all sensors support the same measurements or units.
+		The current implementation combines everything into a single monolithic component:
+	}{
+		Du entwickelst ein sensorbasiertes eingebettetes System, das mehrere Hardware-Geräte unterstützt.
+		Einige Sensoren liefern nur die Temperatur (in Celsius oder Kelvin), andere nur den Luftdruck (in Bar oder Pascal), und einige unterstützen beides.
+		Allerdings unterstützen nicht alle Sensoren die gleichen Messgrößen oder Einheiten.
+		Die aktuelle Implementierung kombiniert alles in einer einzigen monolithischen Komponente:
+	}
+
+	\myexample{\t{Monolithic Sensor Component}{Monolithische Sensor-Komponente}}{
+		\includegraphics[scale=1.1]{code-java-monocomponent}
+	}
+
+	\begin{enumerate}
+		\item \t{
+			Based on this example, describe how would you design a modular sensor component suitable for a software product line.
+			How can the design be adapted to handle different sensor capabilities and unit formats?
+			Does \emph{glue code} play a role?
+		}{
+			Beschreibe basierend auf diesem Beispiel, wie du eine modulare Sensor-Komponente entwerfen würdest, die für eine Software-Produktlinie geeignet ist.
+			Wie kann das Design angepasst werden, um verschiedene Sensor-Fähigkeiten und Einheitenformate zu handhaben?
+			Spielt \emph{Glue Code} eine Rolle?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Explain the \textbf{library scaling problem}.
+		}{
+			Erkläre das \textbf{Library-Scaling-Problem}.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{ModularServiceComposition}
+{\t{Service Composition}{Service-Komposition}}{
+	\t{
+		You are developing a product line for a vehicle tracking system with services like \texttt{TrackerService}, \texttt{AlertService}, and \texttt{ReportService}.
+	}{
+		Du entwickelst eine Produktlinie für ein Fahrzeug-Tracking-System mit Services wie \texttt{TrackerService}, \texttt{AlertService} und \texttt{ReportService}.
+	}
+
+	\myexample{\t{Microservices Example}{Microservices-Beispiel}}{
+		\includegraphics[scale=1.1]{code-java-orchestration}
+	}
+
+	\begin{enumerate}
+		\item \t{
+			Which architectural approach is used in this design?
+			What are the trade-offs of using this approach in a software product line?
+		}{
+			Welcher architektonische Ansatz wird in diesem Design verwendet?
+			Was sind die Vor- und Nachteile der Verwendung dieses Ansatzes in einer Software-Produktlinie?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			What is an alternative approach for service composition used in above code?
+			How might it affect handling feature variability in a software product line?
+		}{
+			Was ist ein alternativer Ansatz für Service-Komposition im obigen Code?
+			Wie könnte dies die Handhabung von Variabilität in einer Software-Produktlinie beeinflussen?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{ModularFramework}
+{\t{Frameworks and Plugin Conflicts}{Frameworks und Plugin-Konflikte}}{
+	\t{
+		You are given a minimalistic plugin-based framework in Java.
+	}{
+		Gegeben ist ein minimalistisches Plugin-basiertes Framework in Java.
+	}
+
+	\myexample{\t{Minimalistic Dummy-Framework}{Minimalistisches Dummy-Framework}}{
+		\includegraphics[scale=1.2]{code-framework}
+	}
+
+	\begin{enumerate}
+		\item \t{
+			Explain the term \emph{framework} by considering additionally the terms \emph{plugin/add-on}, \emph{interface}, and \emph{inversion of control}.
+		}{
+			Was versteht man unter einem Framework?
+			Gehe dabei auch auf die Begriffe Plug-in/Add-on, Schnittstelle und \emph{Inversion of Control} ein.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Implement the following plugins:
+		}{
+			Implementiere die folgenden Plugins:
+		}
+		\begin{itemize}
+			\item \t{
+				A plugin that measures how long the application ran (approximately).
+				The plugin should log the time so that it is visible to the user.
+			}{
+				Ein Plugin, das misst, wie lange die Anwendung lief (ungefähr).
+				Das Plugin soll die Zeit so loggen, dass sie für den Benutzer sichtbar ist.
+			}
+			\item \t{
+				A plugin that changes the color of the main button to \textcolor{red}{red}.
+			}{
+				Ein Plugin, das die Farbe des Hauptbuttons auf \textcolor{red}{Rot} ändert.
+			}
+			\item \t{
+				A plugin that sets the application title to \texttt{"Hello World"}.
+			}{
+				Ein Plugin, das den Titel der Anwendung auf \texttt{"Hello World"} setzt.
+			}
+			\item \t{
+				A plugin that changes the color of the main button to \textcolor{blue}{blue}.
+			}{
+				Ein Plugin, das die Farbe des Hauptbuttons auf \textcolor{blue}{Blau} ändert.
+			}
+		\end{itemize}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Implement a dedicated \texttt{main} function that launches the framework with all your plugins.
+			Do you observe any problems or unexpected behaviors?
+			If so, how could they be addressed?
+			Where does inversion of control occur in this design?
+		}{
+			Implementiere eine dedizierte \texttt{main}-Funktion, die das Framework mit all deinen Plugins startet.
+			Beobachtest du irgendwelche Probleme oder unerwartetes Verhalten?
+			Falls ja, wie könnten sie adressiert werden?
+			Wo tritt Inversion of Control in diesem Design auf?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			How would you extend the framework to support plugin priorities, so that potential conflicts between plugins can be resolved in a controlled way?
+			How do such conflicts reflect the \textbf{preplanning problem}?
+		}{
+			Wie würdest du das Framework erweitern, um Plugin-Prioritäten zu unterstützen, sodass eventuelle Konflikte zwischen Plugins kontrolliert aufgelöst werden können?
+			Wie spiegeln solche Konflikte im Kontext einer Produktlinie das \textbf{Preplanning-Problem} wider?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{ModularComparison}
+{\t{%
+	Comparison of Variability Implementation Techniques
+}{%
+	Vergleich von Implementierungstechniken für Variabilität
+}}{
+	\t{
+		Compare the advantages, disadvantages, and use cases of implementation techniques discussed in the lecture so far.
+		Use examples to support your arguments.
+	}{
+		Vergleiche die Vorteile, Nachteile und Anwendungsfälle der bisher in der Vorlesung besprochenen Implementierungstechniken.
+		Verwende Beispiele zur Untermauerung deiner Argumente.
+	}
+
+	\begin{solution}
+REDACTED
+	\end{solution}
+}

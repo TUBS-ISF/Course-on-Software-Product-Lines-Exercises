@@ -1,0 +1,48 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{modernjava}{
+	language=Java,
+	tabsize=2,
+	breaklines=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+}
+
+\begin{document}
+	\begin{lstlisting}[style=modernjava]
+		enum Mode {
+			DRIVING, WALKING, CYCLING
+		}
+		
+		class Navigator {
+			void navigate(Route route, Mode mode) {
+				if (mode == Mode.DRIVING) {
+					System.out.println("Calculating driving route...");
+				} else if (mode == Mode.WALKING) {
+					System.out.println("Calculating walking route...");
+				} else if (mode == Mode.CYCLING) {
+					System.out.println("Calculating cycling route...");
+				}
+			}
+		}
+		
+		class Route {
+			// Assume route details are here
+		}
+		
+		public class Main {
+			public static void main(String[] args) {
+				Route route = new Route();
+				Navigator nav = new Navigator();
+				nav.navigate(route, Mode.CYCLING);
+			}
+		}
+	\end{lstlisting}
+\end{document}

@@ -1,0 +1,442 @@
+\deftask{ModelingFundamentals}
+{\t{Feature Modeling Fundamentals}{Grundlagen zu Feature-Modellen}}{
+	\t{
+		Consider the following feature model for a mobile app product line.
+		(Abbreviations of the features names are highlighted in red.)
+	}{
+		Gegeben sei folgendes Feature-Modell für eine Mobile-App-Produktlinie.
+		(Abkürzungen der Feature-Namen sind rot hervorgehoben.)
+	}
+
+	\myexample{\t{%
+		Feature Model: Smart Mobile App
+	}{%
+		Feature-Modell: Smarte Mobile App
+	}}{
+		\centering\sffamily
+		\featureDiagram{
+			\textbf{\textcolor{red}{M}}obile\textbf{\textcolor{red}{A}}pp,abstract
+			[\textbf{\textcolor{red}{L}}ogin,mandatory,abstract
+			[\textbf{\textcolor{red}{E}}mail,alternative,concrete]
+			[\textbf{\textcolor{red}{G}}oogle,concrete]
+			[\textbf{\textcolor{red}{F}}acebook,concrete]]
+			[\textbf{\textcolor{red}{N}}otifications,optional,abstract
+			[\textbf{\textcolor{red}{P}}ush,optional,concrete]
+			[\textbf{\textcolor{red}{I}}n\textbf{\textcolor{red}{A}}pp,optional,concrete]]
+			[{\textbf{\textcolor{red}{P}}aymen\textbf{\textcolor{red}{t}}},optional,abstract
+			[\textbf{\textcolor{red}{C}}redit\textbf{\textcolor{red}{C}}ard,or,concrete]
+			[\textbf{\textcolor{red}{P}}ay\textbf{\textcolor{red}{P}}a\textbf{\textcolor{red}{l}},concrete]
+			[\textbf{\textcolor{red}{V}}oucher,concrete]]
+			[{\textbf{\textcolor{red}{A}}nalytics},optional,concrete]
+			}
+			$\text{\textbf{\textcolor{red}{P}}ush} \implies \text{\textbf{\textcolor{red}{G}}oogle}$ \\
+			$\text{\textbf{\textcolor{red}{A}}nalytics} \implies \text{\textbf{\textcolor{red}{C}}redit\textbf{\textcolor{red}{C}}ard}$ \\
+			$\text{\textbf{\textcolor{red}{P}}ay\textbf{\textcolor{red}{P}}a\textbf{\textcolor{red}{l}}} \implies \text{\textbf{\textcolor{red}{I}}n\textbf{\textcolor{red}{A}}pp}$
+	}
+
+	\begin{enumerate}
+		\item
+		\t{
+			What is a feature model, and what are its typical purposes and applications in software product line engineering?
+		}{
+			Was ist ein Feature-Modell und was sind seine typischen Zwecke und Anwendungen im Software-Produktlinien-Engineering?
+		}
+
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item
+		\t{
+			Explain the given feature model, including its structure and constraints.
+			Provide one valid and one invalid configuration along with the reasoning behind each choice.
+		}{
+			Erkläre das gegebene Feature-Modell, einschließlich seiner Struktur und Constraints.
+			Gib eine gültige und eine ungültige Konfiguration an und begründe deine Wahl.
+		}
+
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{ModelingAnalysis}
+{\t{Feature Model Analysis}{Feature-Modell-Analyse}}{
+	\t{
+		Analyze the following feature model for a simple music player device.
+	}{
+		Analysiere das folgende Feature-Modell für ein einfaches Musikabspielgerät.
+	}
+	\myexample{\t{%
+		Feature Model: Simple Music Player
+	}{%
+		Feature-Modell: Einfacher Musikplayer
+	}}{
+		\centering\sffamily
+		\featureDiagram{
+			MusicPlayer,abstract
+			[Playback,mandatory,abstract
+			[MP3,alternative,concrete]
+			[FLAC,concrete]]
+			[Connectivity,optional,abstract
+			[Bluetooth,optional,concrete]
+			[WiFi,optional,concrete]]
+			[Storage,optional,abstract
+			[SDCard,optional,concrete]
+			[InternalMemory,optional,concrete]]
+		}
+
+		$\text{WiFi} \pimplies \text{InternalMemory}$ \\
+		$\neg \text{FLAC}$ \\
+		$\text{Bluetooth} \pimplies \text{InternalMemory}$ \\
+		$\text{WiFi} \pimplies \neg \text{SDCard}$
+	}
+	\begin{enumerate}
+		\item \t{
+			Is the feature model void? Justify your answer.
+		}{
+			Ist das Feature-Modell inkonsistent?
+			Begründe deine Antwort.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Identify which features are core and which are dead.
+		}{
+			Identifiziere, welche Features \emph{core} (nicht abwählbar) und welche tot sind.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Propose a new constraint that would make Bluetooth a dead feature.
+		}{
+			Schlage eine neue Bedingung vor, die Bluetooth zu einem toten Feature macht.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			How can a SAT solver be applied to perform the analyses (a) and (b)?
+		}{
+			Wie kann ein SAT-Solver angewendet werden, um die Analysen (a) und (b) durchzuführen?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{ModelingTransformation}
+{\t{Feature Model Transformation}{Feature-Modell-Transformation}}{
+	\t{
+		You are given the following feature model.
+	}{
+		Gegeben sei folgendes Feature-Modell.
+	}
+	\myexample{Graph Product Line}{
+		\centering\sffamily
+		\featureDiagram{
+			Graph,abstract
+			[Edges,mandatory,abstract
+			[Directed,alternative,concrete]
+			[Undirected,concrete]]
+			[Algorithms,optional,abstract,
+			[DFS,or,concrete]
+			[CycleDetector,concrete]]
+		}
+
+		$\text{CycleDetector} \pimplies \text{Directed}$
+	}
+	\begin{enumerate}
+		\item \t{
+			How many valid products can be derived from the given feature model?
+		}{
+			Wie viele Produkte beschreibt das obige Feature-Modell?
+		}
+		\item \t{
+			How can you in general determine the number of configurable products?
+			What is the difficulty?
+		}{
+			Wie kann man beim Bestimmen dieser Anzahl allgemein vorgehen (und wo liegt die Schwierigkeit)?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		\item
+		\t{
+			Diagrams are not the only language for feature models.
+			Transform the given diagram into a
+			\begin{itemize}
+				\item propositional formula,
+				\item CNF (use the propositional formula you just created),
+				\item set of all valid configurations (subset of the superset of all features).
+			\end{itemize}
+			What are the advantages and disadvantages of these notations?
+			Do you know other languages for constraints?
+		}{
+			Es gibt neben der Diagrammschreibweise noch andere Arten, Feature-Modelle darzustellen.
+			Überführe das obige Modell (1) in eine aussagenlogische Formel und (2) in eine Menge aller gültigen Konfigurationen (Teilmenge der Potenzmenge aller Features).
+			Welche Vor- und Nachteile haben diese Darstellungen?
+			Kennst du andere Sprachen für Constraints?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+% for this task, we have different variants, which can be enabled manually by uncommenting the respective lines below
+\deftask{ModelingDerivation}
+{\t{Derive Feature Models from Requirements}{Feature-Modelle aus Anforderungen ableiten}}{
+	\t{
+		Often, customers may already have various requirements in mind, but they are not formalized as feature models.
+		In the following scenarios, help the customer to specify their requirements.
+	}{
+		Oft haben Kunden bereits verschiedene Anforderungen im Kopf, aber diese sind nicht als Feature-Modelle formalisiert.
+		In den folgenden Szenarien hilfst du dem Kunden, seine Anforderungen zu spezifizieren.
+	}
+
+	\begin{enumerate}
+		\item
+		\t{
+			Our first customer wants to build a product line for
+			smart home control devices.
+			% snack vending machines.
+			They mention the following requirements:
+		}{
+			Unser erster Kunde möchte eine Produktlinie für
+			Smart-Home-Steuergeräte
+			% Snackautomaten
+			aufbauen.
+			Er nennt die folgenden Anforderungen:
+		}
+		\begin{itemize}
+			\item \t{
+				Voice control requires a microphone and a speaker.
+			}{
+				Sprachsteuerung erfordert ein Mikrofon und einen Lautsprecher.
+			}
+			\item \t{
+				Remote control via smartphone requires Wi-Fi.
+			}{
+				Fernsteuerung über Smartphone erfordert WLAN.
+			}
+			\item \t{
+				Displaying a user interface requires a touchscreen.
+			}{
+				Die Anzeige einer Benutzeroberfläche erfordert einen Touchscreen.
+			}
+			\item \t{
+				Motion detection requires an infrared sensor.
+			}{
+				Bewegungserkennung erfordert einen Infrarotsensor.
+			}
+			\item \t{
+				Outdoor installation requires weatherproofing.
+			}{
+				Außeninstallation erfordert Wetterfestigkeit.
+			}
+		\end{itemize}
+		% \begin{itemize}
+		% 	\item \t{
+		% 		Paying with card requires a card reader and a pin pad.
+		% 	}{
+		% 		Kartenzahlung erfordert einen Kartenleser und ein Pin-Pad.
+		% 	}
+		% 	\item \t{
+		% 		Selling ice cream requires a freezer.
+		% 	}{
+		% 		Der Verkauf von Eiscreme erfordert eine Gefriereinheit.
+		% 	}
+		% 	\item \t{
+		% 		For airports, multiple language support is needed.
+		% 	}{
+		% 		Für Flughäfen ist eine mehrsprachige Unterstützung erforderlich.
+		% 	}
+		% 	\item \t{
+		% 		The option to pay with cash requires further security measures.
+		% 	}{
+		% 		Die Option der Barzahlung erfordert zusätzliche Sicherheitsmaßnahmen.
+		% 	}
+		% 	\item \t{
+		% 		Selling bottled drinks requires a transport system.
+		% 	}{
+		% 		Der Verkauf von Flaschengetränken erfordert ein Transportsystem.
+		% 	}
+		% \end{itemize}
+		\t{
+			Create a feature model representing these requirements.
+			What dependencies or features would you suggest adding?
+		}{
+			Erstelle ein Feature-Modell, das diese Anforderungen abbildet.
+			Fehlen Abhängigkeiten oder Features?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		\vspace{1\baselineskip}
+		\item
+		\t{
+			Our second customer wants to
+			build a product line for smartphones.
+			% turn their family of bikes into a product line.
+			They are unsure about dependencies, but provide examples of their sold models:
+		}{
+			Unser zweiter Kunde möchte
+			eine Produktlinie für Smartphones aufbauen.
+			% seine Fahrradfamilie in eine Produktlinie umwandeln.
+			Er ist sich über Abhängigkeiten unsicher, gibt jedoch Beispiele seiner verkauften Modelle an:
+		}
+		\begin{itemize}
+			\item \t{
+				5.5 inch Display, Front Camera, Fingerprint Sensor, NFC, Wi-Fi
+			}{
+				5,5-Zoll-Display, Frontkamera, Fingerabdrucksensor, NFC, WLAN
+			}
+			\item \t{
+				6.1 inch Display, Front Camera, Back Camera, NFC, Wi-Fi, 5G
+			}{
+				6,1-Zoll-Display, Frontkamera, Rückkamera, NFC, WLAN, 5G
+			}
+			\item \t{
+				5.0 inch Display, Front Camera, Fingerprint Sensor, Wi-Fi
+			}{
+				5,0-Zoll-Display, Frontkamera, Fingerabdrucksensor, WLAN
+			}
+			\item \t{
+				6.5 inch Display, Back Camera, Wi-Fi, 5G
+			}{
+				6,5-Zoll-Display, Rückkamera, WLAN, 5G
+			}
+		\end{itemize}
+		% \begin{itemize}
+		% 	\item \t{
+		% 		\{24 inches, Front light, Back light, Dynamo, Brakes, Bell\}
+		% 	}{
+		% 		\{24 Zoll, Vorderlicht, Rücklicht, Dynamo, Bremsen, Klingel\}
+		% 	}
+		% 	\item \t{
+		% 		\{18 inches, Front light, Back light, Dynamo, Brakes, Jockey wheel\}
+		% 	}{
+		% 		\{18 Zoll, Vorderlicht, Rücklicht, Dynamo, Bremsen, Stützrad\}
+		% 	}
+		% 	\item \t{
+		% 		\{16 inches, Brakes, Jockey wheel, Bell\}
+		% 	}{
+		% 		\{16 Zoll, Bremsen, Stützrad, Klingel\}
+		% 	}
+		% 	\item \t{
+		% 		\{26 inches, Front light, Dynamo, Brakes\}
+		% 	}{
+		% 		\{26 Zoll, Vorderlicht, Dynamo, Bremsen\}
+		% 	}
+		% 	\item \t{
+		% 		\{22 inches, Back light, Dynamo, Brakes\}
+		% 	}{
+		% 		\{22 Zoll, Rücklicht, Dynamo, Bremsen\}
+		% 	}
+		% 	\item \t{
+		% 		\{16 inches, Front light, Back light, Dynamo, Brakes\}
+		% 	}{
+		% 		\{16 Zoll, Vorderlicht, Rücklicht, Dynamo, Bremsen\}
+		% 	}
+		% \end{itemize}
+		\t{
+			Create a feature model based on these sample products.
+			What difficulties might arise when creating a feature model from only a small set of example products?
+		}{
+			Erstelle ein Feature-Modell basierend auf diesen Beispielprodukten.
+			Welche Schwierigkeiten könnten auftreten, wenn man ein Feature-Modell nur aus einer kleinen Auswahl von Produkten erstellt?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+% for this task, we have different variants, which can be enabled manually by uncommenting the respective lines below
+\deftask{ModelingCountSubwaySandwiches}
+{\t{How many sandwiches does Subway sell?}{Wie viele Sandwiches gibt es bei Subway?}}{
+	\begin{enumerate}
+	\item \t{
+		Try to calculate (using a method of your choice) the (approximate) number of all sandwiches that can be ordered at Subway.
+		Use the given order form.
+		Explain your idea.
+		Is it manual or machine-supported?
+
+		Can you find a solution?
+		If you have difficulties, document them.
+		How well does your result approximate the actual solution?
+	}{
+		Versuche, mit einer Methode deiner Wahl (eine Näherung für) die Anzahl aller Sandwiches zu berechnen, die man bei Subway bestellen kann.
+		Nutze dafür das angegebene Bestellformular.
+		Erläutere deinen Ansatz.
+		Ist dieser manuell oder maschinell unterstützt?
+
+		Gelingt es dir, eine Lösung zu finden?
+		Falls Schwierigkeiten auftreten, dokumentiere diese.
+		Was glaubst du, wie gut ist deine Näherung?
+	}
+	\begin{solution}
+REDACTED
+	\end{solution}
+	\item \t{
+		Are there aspects regarding this form you would criticize as a product-line engineer?
+		How do these aspects make finding the right answer more difficult?
+	}{
+		Gibt es Aspekte, die du als Produktlinieningenieur an dem Bestellformular kritisieren würdest (und wenn ja, welche)?
+		Inwiefern erschweren diese Aspekte das Finden einer genauen Lösung?
+	}
+	\begin{solution}
+REDACTED
+	\end{solution}
+	\end{enumerate}
+
+	\vspace*{1ex}
+	\hspace*{-.1\linewidth}
+	\includegraphics[width=1.2\linewidth,page=3,trim=0.5cm 2cm 0.8cm 0.5cm,clip]{../pics/subway-sandwiches-form.pdf}
+	% \footnotesize
+	% \t{
+	% 	If you decide to use a machine-supported solution for this task, here are some hints:
+	% }{
+	% 	Solltest du dich für eine maschinell unterstützte Lösung der Aufgabe entscheiden, hier einige Hinweise:
+	% }
+	% \begin{itemize}
+	% 	\item \t{
+	% 		FeatureIDE can count how many configurations a feature model represents.
+	% 		You can find this information in the \emph{FeatureIDE Statistics} view or, based on a partial configuration, in the \emph{Configuration Editor}.
+	% 	}{
+	% 		FeatureIDE kann zählen, wie viele Konfigurationen ein Feature-Modell repräsentiert.
+	% 		Diese Informationen findest du im \emph{FeatureIDE Statistics} View oder, basierend auf einer Teilkonfiguration, im \emph{Configuration Editor}.
+	% 	}
+	% 	\item \t{
+	% 		Counting large configuration spaces with FeatureIDE can be difficult.
+	% 		If you encounter difficulties, use a \#SAT solver (research briefly what the difference to a SAT solver is) like \emph{d4}.\footnote{\url{https://github.com/ekuiter/torte/raw/refs/heads/main/src/docker/solver/emse-2023/d4}}
+	% 		These are Linux binaries, so under Windows consider using a virtual machine or WSL (and \texttt{chmod +x countAntom} to make the file executable).
+	% 		You can run it with \texttt{./countAntom <DIMACS file>} or \texttt{./d4 <DIMACS file>}.
+	% 	}{
+	% 		Das Zählen von großen Konfigurationsräumen mit FeatureIDE kann unter Umständen schwierig sein.
+	% 		Falls du dabei Schwierigkeiten hast, verwende einen \#SAT-Solver (recherchiere in dem Fall kurz, was der Unterschied zu einem SAT-Solver ist) wie \emph{d4}.\footnote{\url{https://github.com/ekuiter/torte/raw/refs/heads/main/src/docker/solver/emse-2023/d4}}
+	% 		Das sind Linux-Binaries, also verwende unter Windows ggf. eine virtuelle Maschine oder WSL (und \texttt{chmod +x countAntom}, um die Datei ausführbar zu machen).
+	% 		Der Aufruf erfolgt mit \texttt{./countAntom <DIMACS file>} oder \texttt{./d4 <DIMACS file>}.
+	% 	}
+	% 	\item \t{
+	% 		You can export a DIMACS file from FeatureIDE by right-clicking on \texttt{model.xml > FeatureIDE > Export Feature Model} (research briefly what this data format represents).
+	% 	}{
+	% 		Ein DIMACS-File kansst du in FeatureIDE mit Rechtsklick auf \texttt{model.xml > FeatureIDE > Export Feature Model} exportieren (recherchiere kurz, was dieses Datenformat repräsentiert).
+	% 	}
+	% 	\item \t{
+	% 		On Windows, note that this DIMACS file uses \emph{LF} and not \emph{CRLF} as line ending.
+	% 		This can be set in common text editors.
+	% 	}{
+	% 		Unter Windows ist zu beachen, dass dieses DIMACS-File \emph{LF} und nicht \emph{CRLF} als Zeilenende verwendet.
+	% 		Dies kann in gängigen Texteditoren eingestellt werden.
+	% 	}
+	% \end{itemize}
+}

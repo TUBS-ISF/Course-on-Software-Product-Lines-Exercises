@@ -1,0 +1,46 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinelanguage{MyC}{
+	language=C,
+	morekeywords={if, else, for, while, return, void, int, float, double},
+	morekeywords=[2]{define, include},
+	morekeywords=[3]{ifdef, ifndef, endif, else, elif},
+}
+
+\lstdefinestyle{modernc}{
+	language=MyC,
+	tabsize=2,
+	breaklines=true,
+	basicstyle=\footnotesize\ttfamily,
+	commentstyle=\color{green!50!black}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+	keywordstyle=[2]\color{violet}\ttfamily, % define, include
+	keywordstyle=[3]\color{blue}\ttfamily,   % ifdef etc.
+	keywordstyle=\color{blue}\ttfamily,
+	literate={%
+		\#}{{\textcolor{blue}{\#}}}1  % Color the `#` symbol in teal to match preprocessor directives
+	{else}{{\textcolor{blue}{else}}}4   % Ensure that #else is also teal
+}
+
+\begin{document}
+	\begin{lstlisting}[style=modernc]
+		typedef double p_t;
+		#define EPSILON 0.000001
+		#define CONVERT(x) ((x) * 0.1 + 273.15)
+		#define SENSOR_COUNT 3
+		#define READ_RAW(i) (300 + (i) * 10)
+		
+		void readSensor() {
+			for (int i = 0; i < 3; ++i) {
+				p_t value = ((300 + (i) * 10) * 0.1 + 273.15);
+				if (value > 0.000001) printf("Sensor[%d] active: %.2f\n", i, value);
+			}
+		}
+		
+	\end{lstlisting}
+\end{document}

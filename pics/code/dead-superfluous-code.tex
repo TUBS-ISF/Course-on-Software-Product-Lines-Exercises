@@ -1,0 +1,43 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{spljava}{
+	language=Java,
+	tabsize=2,
+	breaklines=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+}
+\begin{document}
+	\begin{lstlisting}[style=spljava]
+		class Graph {
+			//#ifndef DIRECTED
+			//#ifdef HYPER
+			void edgeVariant1() {
+				Set<Node> nodes;
+			}
+			//#ifdef DIRECTED
+			void edgeVariant2() {
+				Node a, b;
+				a.connectTo(b);
+			}
+			//#endif
+			//#else
+			//#ifndef HYPER
+			void edgeFallback() {
+				Pair<Node, Node> link;
+				//#ifdef DIRECTED
+				link = new Pair<>(new Node(), new Node());
+				//#endif
+			}
+			//#endif
+			//#endif
+		};
+	\end{lstlisting}
+\end{document}

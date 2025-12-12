@@ -1,0 +1,292 @@
+\deftask{AnalysesStrategies}
+{\t{Analysis Strategies for Software Product Lines}{Analyse-Strategien für Software-Produktlinien}}{
+	\t{
+		Define and explain the three primary analysis strategies used in software-product-line engineering.
+		For each strategy, discuss its main characteristics, benefits, and drawbacks using concrete examples.
+		Which strategy would you recommend under which circumstances?
+	}{
+		Definiere und erkläre die drei primären Analyse-Strategien, die bei der Entwicklung von Software-Produktlinien verwendet werden.
+		Diskutiere für jede Strategie ihre Hauptmerkmale, Vorteile und Nachteile anhand konkreter Beispiele.
+		Welche Strategie würdest du unter welchen Umständen empfehlen?
+	}
+	\begin{solution}
+REDACTED
+	\end{solution}
+}
+
+\deftask{AnalysesProblemSolutionSpace}
+{\t{%
+	Analyzing Disagreements Between Problem and Solution Space
+}{%
+	Analyse von Diskrepanzen zwischen Problem- und Lösungsraum
+}}{
+	\t{
+		Consider the following product line for secure communication:
+	}{
+		Gegeben sei folgende Produktlinie für sichere Kommunikation:
+	}
+	\myexample{\t{%
+		Feature Model
+	}{%
+		Feature-Modell
+	}}{
+		\centering\sffamily
+		\featureDiagram{
+			SecureComm,abstract
+			[TLS,optional,concrete]
+			[AUTH,optional,concrete]
+			[LOGGING,optional,concrete]
+		}
+		\\
+		$\text{TLS} \pimplies \text{AUTH}$ \\
+		$\text{LOGGING} \pimplies \text{TLS}$
+	}
+	\myexample{\t{%
+		Annotated Source Code
+	}{%
+		Annotierter Quelltext
+	}}{
+		\includegraphics[width=0.45\linewidth]{code-prob-sol-securecomm}
+	}
+
+	\begin{enumerate}
+		\item \t{
+			What is the problem space of a software product line (in general and in this example)?
+			What is the solution space?
+			What problems can arise when developers only consider one of them when conducting an analysis?
+		}{
+			Was ist der Problemraum einer Software-Produktlinie (allgemein und in diesem Beispiel)?
+			Was ist der Lösungsraum?
+			Welche Probleme können auftreten, wenn Entwickler bei der Analyse nur einen von beiden betrachten?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Which configurations are valid in the given problem space?
+		}{
+			Welche Konfigurationen sind im gegebenen Problemraum gültig?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Which configurations compile successfully in the solution space?
+		}{
+			Welche Konfigurationen kompilieren erfolgreich im Lösungsraum?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Give one configuration that is valid in the problem space but fails to compile in the solution space.
+		}{
+			Gib eine Konfiguration an, die im Problemraum gültig ist, aber im Lösungsraum nicht kompiliert.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Give one configuration that is invalid in the problem space but compiles in the solution space.
+		}{
+			Gib eine Konfiguration an, die im Problemraum ungültig ist, aber im Lösungsraum kompiliert.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Propose a sensible fix for the discrepancy between problem and solution space in this example.
+		}{
+			Schlage vor, wie die Diskrepanz zwischen Problem- und Lösungsraum in diesem Beispiel sinnvoll behoben werden kann.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{AnalysesFeatureMapping}
+{\t{%
+	Analyzing Feature Mappings in Preprocessor-Based Product Lines
+}{%
+	Analyse von Feature Mappings in Präprozessor-basierten Produktlinien
+}}{
+	\begin{enumerate}
+		\item \t{
+			What is dead code in a preprocessor-based product line?
+			What are superfluous annotations?
+			Explain why it is beneficial to know about the presence of these anomalies in a code base.
+		}{
+			Was ist toter Code in einer Präprozessor-basierten Produktlinie?
+			Was sind über\-flüs\-si\-ge Annotationen?
+			Erkläre, warum es vorteilhaft ist, über das Vorhandensein dieser Anomalien in einer Codebasis Bescheid zu wissen.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Which of both problems occur in the following source code, where, and why?
+			Justify your answer using presence conditions.
+		}{
+			Welche dieser beiden Probleme treten im folgenden Quellcode auf, wo, und warum?
+			Begründe deine Antwort anhand von \emph{Presence Conditions}.
+		}
+		\begin{center}
+			\myexample{\t{%
+				Conditionally Compiled \texttt{Graph} Code
+			}{%
+				Bedingt kompilierter \texttt{Graph}-Code
+			}}{
+				\includegraphics[width=0.65\linewidth]{dead-superfluous-code}
+			}
+
+		\end{center}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Given any (unpreprocessed) code fragment, how can we automatically detect dead code and superfluous annotations?
+		}{
+			Angenommen, ein beliebiger Codeausschnitt (vor Ausführung des Präprozessors) ist gegeben.
+			Wie kann man automatisiert toten Code und überflüssige Annotationen erkennen?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Should the problem space be incorporated into the automated detection procedure?
+			If so, how?
+			If not, why not?
+		}{
+			Sollte der Problemraum in das automatisierte Erkennungsverfahren einbezogen werden?
+			Wenn ja, wie?
+			Wenn nein, warum nicht?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{AnalysesVariableCode}
+{\t{%
+	Analyzing Variable Code in Preprocessor-Based Product Lines
+}{%
+	Analyse von variablem Code in Präprozessor-basierten Produktlinien
+}}{
+	\t{
+		Given below is the feature model and code for variable data structures:
+	}{
+		Gegeben sei folgendes Feature-Modell mit Code für variable Datenstrukturen:
+	}
+
+	\myexample{\t{%
+		Feature Model
+	}{%
+		Feature-Modell
+	}}{
+		\centering\sffamily
+		\featureDiagram{
+			DataStructures,abstract
+			[Algorithms,optional,concrete[QuickSort,concrete,or][LinearSearch,concrete]]
+			[Structures,optional,concrete[Array,optional,concrete][Tree,optional,concrete]]
+			[Visualization,mandatory,concrete[Simulation,mandatory,concrete]]
+		}
+		\\
+		$\text{QuickSort} \lor \text{LinearSearch} \rightarrow \text{Array}$
+	}
+
+	\myexample{\t{%
+		Annotated Source Code
+	}{%
+		Annotierter Quelltext
+	}}{
+		\includegraphics[width=0.55\linewidth]{sorting-algorithm}
+	}
+
+	\begin{enumerate}
+		\item \t{
+			Considering both the problem and solution space, are there dead code fragments or superfluous annotations in this example?
+		}{
+			Gibt es toten Quelltext oder überflüssige Annotationen in diesem Beispiel?
+			Beziehe dabei sowohl den Problem- als auch den Lösungsraum mit ein.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			In general, how can unreachable references and conflicting definitions be detected with a SAT solver?
+			Check whether such anomalies appear in this example.
+		}{
+			Wie kann man erreichbare Referenzen und Definitionskonflikte mit einem SAT-Solver allgemein untersuchen?
+			Überprüfe, ob solche Anomalien in diesem Beispiel auftreten.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Can you detect any additional errors in the given example that prevent compiling?
+			Which configurations provoke the found errors?
+		}{
+			Findest du weitere Fehler in dem gegebenen Beispiel, die das Kompilieren verhindern?
+			In welchen Konfigurationen treten die gefundenen Fehler auf?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{AnalysisComplexity}
+{\t{%
+	NP-Completeness of SAT: Theory and Practice
+}{%
+	NP-Vollständigkeit von SAT: Theorie und Praxis
+}}{
+	\t{
+		To answer this task, you may read Sections 1, 4, 5, and 10 of the paper attached below:
+	}{
+		Lies zur Bearbeitung ggf. die Abschnitte 1, 4, 5 und 10 des unten angehängten Papers:
+	}
+
+	\emph{Marcilio Mendonca, Andrzej Wasowski, and Krzysztof Czarnecki. 2009.
+	SAT-based Analysis of Feature Models Is Easy.
+	In SPLC.
+	Carnegie Mellon University, USA, 231--240.}
+	
+	\begin{enumerate}
+	\item \t{
+		The paper discusses a contradictory phenomenon with respect to the satisfiability problem of propositional logic (SAT) and feature models.
+		Where lies this contradiction, and how do the authors explain it?
+	}{
+		In dem Paper wird ein auf den ersten Blick widersprüchliches Phänomen in Bezug auf das Erfüllbarkeitsproblem der Aussagenlogik (SAT) und Feature-Modelle untersucht.
+		Worin liegt der Widerspruch und wie erklären ihn sich die Autoren?
+	}
+
+	\item \t{
+		According to the authors, how can the `difficulty' of a SAT instance (i.e., a propositional formula) be characterized?
+		Which SAT instances are particularly difficult?
+		Also refer to the terms \emph{transition phase} and \emph{crossover point}.
+	}{
+		Wie kann man die ``Schwierigkeit'' einer SAT-Instanz (also einer aussagenlogischen Formel) laut den Autoren charakterisieren?
+		Welche SAT-Instanzen sind besonders schwierig?
+		Nimm auch Bezug auf die Begriffe \emph{transition phase} und \emph{crossover point}.
+	}
+
+	\item \t{
+		Why is it still difficult to determine the \emph{number} of all valid feature configurations by using a SAT solver?
+	}{
+		Warum ist es dennoch schwierig, mit einem SAT-Solver die \emph{Anzahl} valider Konfigurationen in einem Feature-Modell zu zählen?
+	}
+	\end{enumerate}
+}

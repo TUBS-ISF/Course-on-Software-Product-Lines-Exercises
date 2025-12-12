@@ -1,0 +1,56 @@
+\documentclass{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstset{
+	language=Java,
+	tabsize=2,
+	breaklines=true,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{ForestGreen}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible
+}
+
+\begin{document}
+	\begin{lstlisting}
+		public class GridController {
+			
+			//#if PRECISION_HIGH
+			double reading;
+			//#elif PRECISION_LOW
+			float reading;
+			//#else
+			int reading;
+			//#endif
+			
+			public void computePower() {
+				
+				//#if SENSOR_ADVANCED
+				reading = getAdvancedSensorValue();
+				//#if APPLY_SCALING
+				reading = scale(reading, 1.15);
+				//#endif
+				//#elif SENSOR_BASIC
+				reading = getBasicSensorValue();
+				//#endif
+				
+				//#if DEBUG
+				System.out.println("[DEBUG] Raw reading: " + reading);
+				//#endif
+				
+				//#if APPLY_LOGGING
+				logToFile(reading); // logs the value, may be scaled or unscaled
+				//#endif
+			}
+			
+			private double getAdvancedSensorValue() { return 123.45; }
+			private float getBasicSensorValue() { return 78.9f; }
+			private double scale(double val, double factor) { return val * factor; }
+			private void logToFile(double value) { /* log to disk */ }
+		}
+	\end{lstlisting}
+\end{document}

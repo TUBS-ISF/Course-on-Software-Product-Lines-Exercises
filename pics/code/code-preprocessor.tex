@@ -1,0 +1,68 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinelanguage{MyC}{
+	language=C,
+	morekeywords={if, else, for, while, return, void, int, float, double},
+	morekeywords=[2]{define, include},
+	morekeywords=[3]{ifdef, ifndef, endif, else, elif},
+}
+
+\lstdefinestyle{modernc}{
+	language=MyC,
+	tabsize=2,
+	breaklines=true,
+	basicstyle=\footnotesize\ttfamily,
+	commentstyle=\color{green!50!black}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+	keywordstyle=[2]\color{violet}\ttfamily, % define, include
+	keywordstyle=[3]\color{blue}\ttfamily,   % ifdef etc.
+	keywordstyle=\color{blue}\ttfamily,
+	literate={%
+		\#}{{\textcolor{blue}{\#}}}1  % Color the `#` symbol in teal to match preprocessor directives
+	{else}{{\textcolor{blue}{else}}}4   % Ensure that #else is also teal
+	}
+
+\begin{document}
+	\begin{lstlisting}[style=modernc]
+#ifdef PRECISION_HIGH
+    #define p_t double
+    #define EPSILON 0.000001
+    #ifdef UNIT_KELVIN
+        #define CONVERT(x) ((x) * 0.1 + 273.15)
+    #else
+        #define CONVERT(x) ((x) * 0.1)
+    #endif
+#else
+    #define p_t float
+    #define EPSILON 0.001f
+    #define CONVERT(x) (x)
+#endif
+
+// Thermal mode and sensor macros
+#ifdef MODE_THERMAL
+    #define SENSOR_COUNT 3
+    #ifdef SENSOR_ADVANCED
+        #define READ_RAW(i) (300 + (i) * 10)
+    #else
+        #define READ_RAW(i) (200 + (i) * 8)
+    #endif
+#endif
+
+void readSensor() {
+#ifdef MODE_THERMAL
+    for (int i = 0; i < SENSOR_COUNT; ++i) {
+        p_t value = CONVERT(READ_RAW(i));
+        if (value > EPSILON) printf("Sensor[%d] active: %.2f\n", i, value);
+    }
+#else
+    printf("Thermal mode disabled.\n");
+#endif
+}
+
+	\end{lstlisting}
+\end{document}

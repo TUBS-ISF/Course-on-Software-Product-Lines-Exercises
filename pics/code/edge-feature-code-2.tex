@@ -1,0 +1,40 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{modernjava}{
+	language=Java,
+	tabsize=2,
+	breaklines=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+}
+
+\begin{document}
+	\begin{lstlisting}[style=modernjava]
+				// ... (continued)
+
+				//#if Coloring
+				//#if SimpleColor
+				total += colorCost;
+				//#endif
+				//#if MultiColor
+				for (int c : colorCosts) {
+					total += c;
+				}
+				//#endif
+				//#endif
+				//#if Directed
+				return total * 2;
+				//#elif Undirected
+				return total;
+				//#endif
+			}
+		}
+	\end{lstlisting}
+\end{document}

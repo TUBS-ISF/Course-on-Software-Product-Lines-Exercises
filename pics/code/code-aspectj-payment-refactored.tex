@@ -1,0 +1,43 @@
+\documentclass{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{javawithpp}{
+	language=Java,
+	tabsize=2,
+	breaklines=true,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{Purple}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible
+}
+
+\begin{document}
+	\begin{lstlisting}[style=javawithpp]
+		public class PaymentProcessor {
+			public void processPayment(String user, double amount) {
+				double newBalance = getBalance(user) - amount;
+				if (newBalance < 0) {
+					throw new RuntimeException("Insufficient funds");
+				}
+				updateBalance(user, newBalance);
+				logTransaction(user, amount);
+			}
+			
+			public void logTransaction(String user, double amount) {
+				System.out.println("Logged: $" + amount + " for " + user);
+			}
+			
+			private double getBalance(String user) {
+				return 100.0;
+			}
+			
+			private void updateBalance(String user, double newBalance) {
+				System.out.println("Updated balance for " + user + ": $" + newBalance);
+			}
+		}
+	\end{lstlisting}
+\end{document}

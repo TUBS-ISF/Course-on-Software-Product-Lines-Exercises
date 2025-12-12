@@ -1,0 +1,49 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{modernjava}{
+	language=Java,
+	tabsize=2,
+	breaklines=false,
+	basicstyle= \footnotesize \ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+}
+
+\begin{document}
+\begin{lstlisting}[style=modernjava]
+public interface Plugin {
+  void start(Framework f);
+  void terminate(Framework f);
+}
+
+public class Framework {
+  // lots of fields here
+
+  public void start(final List<Plugin> plugins) {
+    plugins.forEach(p -> p.start(this));
+    log("The framework has been set up and is now running!");
+
+    // Doing some complex UI or network stuff
+    // here and communicate with plugins.
+
+    log("Framework is shutting down.");
+    plugins.forEach(p -> p.terminate(this));
+  }
+
+  public void log(String message) { ... }
+  public void setTitle(String message) { ... }
+  public JButton getMainButton() { ... }
+}
+\end{lstlisting}
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

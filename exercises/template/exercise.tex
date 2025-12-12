@@ -1,0 +1,123 @@
+\topmargin0pt
+\headheight0pt
+\headsep0pt
+\textheight9in
+\oddsidemargin0pt
+\textwidth6in
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 2pt minus 1pt}
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+
+% \task[note]{title}{text}
+\newcommand{\task}[3][]{
+	\item \textbf{\sffamily #2} \hfill {\small \textsc{#1}}
+	
+	\ifthenelse{\equal{\theexercise}{overview}}{}{#3}
+}
+
+\ifsolution
+	\newtcolorbox{solution}{%
+		title={\setlength{\parskip}{0ex}\vphantom{/}\footnotesize\t{Solution}{Lösung}},%
+		colback=white,%
+		colframe=red!30,%
+		coltitle=black,%
+		fonttitle=\bfseries\sffamily,%
+		left=1mm,%
+		right=1mm,%
+		top=1mm,%
+		bottom=1mm,%
+		breakable,%
+		before upper={\sffamily\setlength{\parskip}{2pt}\footnotesize}%
+	}
+\else
+	\newenvironment{solution}{\setbox0=\vbox\bgroup}{\egroup}
+\fi
+
+% \deftask{name}{title}{text}
+\newcommand{\deftask}[3]{\expandafter\def\csname #1\endcsname[##1]{\task[##1]{#2}{#3}}}
+
+% \exercise{number}{title}{schedule}{content}
+\newcommand{\exercise}[4]{
+	\ifthenelse{\equal{\theexercise}{#1} \OR \equal{\theexercise}{overview}}{
+		\ifthenelse{\equal{\theexercise}{#1}}{
+			\ifdefined\theuniversity
+				\ifthenelse{\equal{\theuniversity}{paderborn}}{%
+					\includegraphics[width=0.2\linewidth]{upb}
+					\hfill
+					\includegraphics[width=0.16\linewidth]{upb-triangles}\\
+				}{}
+				\ifthenelse{\equal{\theuniversity}{braunschweig}}{%
+					\includegraphics[width=0.25\linewidth]{TUBraunschweig_RGB_beamer}
+					\hfill
+					\includegraphics[width=0.16\linewidth]{ISF_Logo}\\
+				}{}
+				\ifthenelse{\equal{\theuniversity}{magdeburg}}{%
+					\includegraphics[width=0.26\linewidth]{logos/ovgu-blue}
+					\hfill
+					\includegraphics[width=0.21\linewidth]{dbse}\\
+				}{}
+			\fi
+			{\color{lightgray}\hrule}\bigskip
+			\begin{LARGE}
+				\sffamily
+				\centerline{\textbf{\thetitle{}}}
+			\end{LARGE}
+			\medskip
+		}{}
+		\begin{Large}
+			\sffamily
+			\ifthenelse{\equal{\theexercise}{#1}}{\centerline}{}{\ifnum0<0#1\relax \t{Exercise}{Übung} #1: \fi #2 \ifthenelse{\equal{\theexercise}{overview}}{}{\ifsolution (\t{Solution Sheet}{Lösungsblatt}) \fi}}
+		\end{Large}
+		\ifthenelse{\equal{\theexercise}{#1}}{
+			\medskip
+
+			\theauthor \ifdefined\thesemester{}\hfill \thesemester{}\fi
+			
+			\ifdefined\theroom{}\t{Room}{Raum} \theroom{}\fi \ifthenelse{\equal{#3}{}}{}{\hfill #3}
+			
+			\vspace*{1.5ex}%
+			{\color{lightgray}\hrule\medskip}
+		}{}
+		\begin{enumerate}
+			#4
+		\end{enumerate}
+	}{}
+}
+
+\tcbuselibrary{breakable}
+
+\newcommand{\mydefinition}[2]{
+	{\sffamily\begin{tcolorbox}[title={\setlength{\parskip}{0ex}\vphantom{/}#1},colback=white,colframe=orange!30,coltitle=black,fonttitle=\bfseries,left=1mm,right=1mm,top=1mm,bottom=1mm,breakable]
+		#2
+	\end{tcolorbox}}
+}
+
+\newcommand{\myexample}[2]{
+	{\sffamily
+	\begin{tcolorbox}[title={\setlength{\parskip}{0ex}\vphantom{/}#1},colback=white,colframe=blue!30,coltitle=black,fonttitle=\bfseries,left=1mm,right=1mm,top=1mm,bottom=1mm,breakable]
+		#2
+	\end{tcolorbox}}
+}
+
+\newcommand{\mynote}[2]{
+	{\sffamily
+	\begin{tcolorbox}[title={\setlength{\parskip}{0ex}\vphantom{/}#1},colback=white,colframe=red!30,coltitle=black,fonttitle=\bfseries,left=1mm,right=1mm,top=1mm,bottom=1mm,breakable]
+		#2
+	\end{tcolorbox}}
+}
+
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+\input{../Course-on-Software-Product-Lines/slides/template/macros}
+\input{../Course-on-Software-Product-Lines/slides/template/featurediagrams}
+
+\makeatletter
+\let\@noitemerr\relax
+\makeatother
+
+\graphicspath{{../Course-on-Software-Product-Lines/pics/}{../pics/}{../pics/papers/}{../pics/code/}{../pics/logos/}}
+
+\renewcommand{\emph}[1]{{\textit{#1}}}
+
+\newcommand{\explanationItem}[1]{\item[] \textcolor{gray}{\footnotesize #1}}
+\newcommand{\commandItem}[1]{\item[>] \texttt{#1}}

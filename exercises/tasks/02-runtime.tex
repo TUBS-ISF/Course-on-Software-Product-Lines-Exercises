@@ -1,0 +1,278 @@
+\deftask{RuntimeVariabilityConfiguration}
+{\t{Configuring Runtime Variability}{Laufzeitvariabilität konfigurieren}}{
+	\begin{enumerate}
+		\item \t{What is runtime variability?}{Was ist Laufzeitvariabilität?}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Provide examples of two real-world software systems that make use of runtime variability.
+			Describe how they use it and how the user configures them.
+		}{
+			Nenne Beispiele für zwei reale Softwaresysteme, die Laufzeitvariabilität nutzen.
+			Beschreibe, wie sie diese nutzen und wie der Benutzer sie konfiguriert.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Imagine you are developing a music player app that offers the following configurable options: visual equalizer (enabled or disabled), streaming quality (high or low), and theme (light or dark).
+		}{
+			Stell dir vor, du entwickelst eine Musik-Player-App mit folgenden konfigurierbaren Optionen: visueller Equalizer (aktiviert oder deaktiviert), Streaming-Qualität (hoch oder niedrig) und Theme (hell oder dunkel).
+		}
+		\begin{enumerate}
+			\item \t{
+				Describe two possible methods to configure these options at runtime.
+			}{
+				Beschreibe zwei mögliche Methoden, um diese Optionen zur Laufzeit zu konfigurieren.
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+			
+			\item \t{
+				Using a suitable example, explain what could happen if conflicting options are selected.
+				Describe how you would detect and handle such conflicts at runtime.
+			}{
+				Erkläre an einem geeigneten Beispiel, was passieren könnte, wenn widersprüch\-liche Optionen ausgewählt werden.
+				Beschreibe, wie du solche Konflikte zur Laufzeit erkennen und behandeln würdest.
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+		\end{enumerate}
+			
+		\item \t{
+			What are the pros and cons of realizing variants with runtime variability?
+		}{
+			Welche Vor- und Nachteile hat die Umsetzung von Varianten mit Laufzeitvariabilität?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{RuntimeVariabilityRealization}
+{\t{Realizing Runtime Variability}{Laufzeitvariabilität realisieren}}{
+	\t{
+		You are developing a modern navigation app used by thousands of daily commuters, tourists, and fitness enthusiasts.
+		The app must support three primary modes of operation: driving mode, walking mode, and cycling mode.
+		Each mode provides a different user experience, route calculation, and interface adjustment tailored to the user's current activity.
+		Users may switch between these modes depending on their environment and preferences to receive the most accurate and relevant navigation instructions.
+	}{
+		Du entwickelst eine moderne Navigations-App, die von Tausenden von Pendlern, Touristen und Fitness-Enthusiasten täglich genutzt wird.
+		Die App muss drei primäre Betriebsmodi unterstützen: Fahrmodus, Gehmodus und Fahrradmodus.
+		Jeder Modus bietet eine unterschiedliche Benutzererfahrung, Routenberechnung und Schnittstellenanpassung, die auf die aktuelle Aktivität des Benutzers zugeschnitten ist.
+		Benutzer können je nach Umgebung und Präferenzen zwischen diesen Modi wechseln, um die genauesten und relevantesten Navigationsanweisungen zu erhalten.
+	}
+	\begin{enumerate}
+		\item \t{
+			Describe how you would implement this variability using global parameters.
+		}{
+			Beschreibe, wie du diese Variabilität mit globalen Parametern umsetzen würdest.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Describe an alternative solution using method parameters instead of global parameters.
+		}{
+			Beschreibe eine alternative Lösung mit Methodenparametern anstelle von globalen Parametern.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Compare the two solutions.
+			Which one is easier to maintain and which one is more flexible for future updates?
+			Justify your answer.
+		}{
+			Vergleiche die beiden Lösungen.
+			Welche ist einfacher zu warten und welche ist flexibler für zukünftige Updates?
+			Begründe deine Antwort.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		\newpage
+		\item \t{
+			Based on your preferred approach, implement the navigation logic using the scaffold below.
+			Explain which variability approach you used (global configuration, method parameters, or design pattern) and why it is suitable in this case.
+		}{
+			Implementiere basierend auf deinem bevorzugten Ansatz die Navigationslogik unter Verwendung des unten stehenden Gerüsts.
+			Erkläre, welchen Variabilitätsansatz du verwendet hast (globale Konfiguration, Methodenparameter oder Design Patterns) und warum er in diesem Fall geeignet ist.
+		}
+		
+		\myexample{
+			\t{Scaffold for implementing navigation variability}{Gerüst zur Implementierung von Navigationsvariabilität}
+		}{
+			\includegraphics[scale=1.2]{code-navigation-stub}
+		}
+		
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+	\end{enumerate}
+}
+
+\deftask{RuntimeDesignPatterns}
+{\t{Design Patterns for Runtime Variability}{Design Patterns für Laufzeitvariabilität}}{
+	\t{
+		You are designing customizable software for a coffee machine.
+		The machine can prepare different drinks such as espresso, cappuccino, and latte.
+		The machine can optionally add sugar or milk and can log preparation times to a file if enabled.
+	}{
+		Du entwirfst anpassbare Software für eine Kaffeemaschine.
+		Die Maschine kann verschiedene Getränke wie Espresso, Cappuccino und Latte zubereiten.
+		Die Maschine kann optional Zucker oder Milch hinzufügen und Zubereitungszeiten in einer Datei protokollieren.
+	}
+	\begin{enumerate}
+		\item \t{
+			Explain \emph{design patterns} and their general purpose!
+			Name and briefly explain one design pattern that can be used to implement variability.
+		}{
+			Erkläre \emph{Design Patterns} und deren allgemeinen Zweck!
+			Nenne und erkläre kurz ein Design Pattern, das zur Implementierung von Variabilität verwendet werden kann.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	
+		\item \t{
+			Select one design pattern that you would use to implement the variability in the coffee machine system.
+			Justify why this design pattern is appropriate for this scenario.
+		}{
+			Wähle ein Design Pattern aus, das du verwenden würdest, um die Variabilität im Kaffeemaschinen-System zu implementieren.
+			Begründe, warum dieses Design Pattern für dieses Szenario geeignet ist.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Write a small pseudo-code snippet or construct a class diagram demonstrating how the selected design pattern would work in the coffee machine system.
+		}{
+			Schreibe einen kleinen Pseudo-Code-Ausschnitt oder erstelle ein Klassendiagramm, das zeigt, wie das ausgewählte Design Pattern im Kaffeemaschinen-System funktionieren würde.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Imagine the user changes the coffee recipe while the machine is already preparing the drink.
+		}{
+			Stell dir vor, der Benutzer ändert das Kaffee-Rezept, während die Maschine das Getränk bereits zubereitet.
+		}
+		\begin{enumerate}
+			\item \t{
+				Explain what could go wrong if configurations are changed at runtime during preparation.
+			}{
+				Erkläre, was schief gehen könnte, wenn Konfigurationen während der Zubereitung zur Laufzeit geändert werden.
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+			
+			\item \t{
+				Propose and explain a solution to prevent potential failures.
+			}{
+				Schlage eine Lösung vor, um potenzielle Fehler zu verhindern, und erkläre diese.
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+			
+		\end{enumerate}
+		\item \t{
+			Could you implement this coffee machine system without using a design pattern?
+			If yes, how?
+			If not, why not?
+		}{
+			Könntest du dieses Kaffeemaschinen-System ohne Verwendung eines Design Patterns implementieren?
+			Wenn ja, wie?
+			Wenn nicht, warum nicht?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{RuntimeDesignPatternsGameAudio}
+{\t{Parameters Vs. Design Patterns}{Parameter oder Design Patterns?}}{
+	\t{
+		The following Java source code fragment implements variability at runtime by using global configuration parameters to manage different audio outputs in a video game.
+	}{
+		Das folgende Java-Quelltextfragment implementiert Variabilität zur Laufzeit mit globalen Konfigurationsparametern, um verschiedene Audio-Ausgaben in einem Videospiel zu ermöglichen.
+	}
+	
+	\myexample{
+		\t{A method with configurable audio output in Java}{Eine Methode mit konfigurierbarer Audio-Ausgabe in Java}
+	}{
+		\includegraphics[scale=1.2]{code-audio-output}
+	}
+	
+	\t{
+		The current implementation must be improved to satisfy the following requirements:
+	}{
+		Die aktuelle Implementierung muss verbessert werden, um die folgenden Anforderungen zu erfüllen:
+	}
+	\begin{itemize}
+		\item \t{
+			The system should allow dynamically switching audio outputs during gameplay without restarting the game.
+		}{
+			Das System sollte das dynamische Umschalten von Audio-Ausgaben während des Spielens ermöglichen, ohne das Spiel neu zu starten.
+		}
+		\item \t{
+			The system should support playing sounds on multiple outputs at the same time.
+		}{
+			Das System sollte das gleichzeitige Abspielen von Tönen auf mehreren Ausgaben unterstützen.
+		}
+		\item \t{
+			The system should allow adding new audio output types, such as VR headsets, without modifying the existing source code.
+		}{
+			Das System sollte das Hinzufügen neuer Audio-Ausgabe-Typen wie VR-Headsets er\-mög\-lichen, ohne den vorhandenen Quellcode zu ändern.
+		}
+	\end{itemize}
+
+	\begin{enumerate}
+		\item \t{
+			What are the problems with the current implementation?
+			List and briefly explain the issues.
+		}{
+			Welche Probleme hat die aktuelle Implementierung?
+			Liste die Probleme auf und erkläre sie kurz.
+		}		
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Which design pattern could solve the problems and why?
+			Explain how the selected design pattern would support runtime switching of audio outputs, multiple simultaneous outputs, and the addition of new audio systems without changing existing code.
+		}{
+			Welches Design Pattern könnte die Probleme lösen und warum?
+			Erkläre, wie das ausgewählte Design Pattern das Umschalten von Audio-Ausgaben zur Laufzeit, mehrere gleichzeitige Ausgaben und das Hinzufügen neuer Audio-Systeme ohne Änderung des bestehenden Codes unterstützen würde.
+		}
+		
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Refactor the provided Java code using the proposed design pattern.
+			Provide the refactored Java-style code that satisfies all three requirements.
+		}{
+			Refaktoriere (= überarbeite) den bereitgestellten Java-Code unter Verwendung des vorgeschlagenen Design Patterns, so dass alle drei Anforderungen erfüllt werden.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}

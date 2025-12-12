@@ -1,0 +1,47 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{spljava}{
+	language=Java,
+	tabsize=2,
+	breaklines=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+}
+\begin{document}
+	\begin{lstlisting}[style=spljava]
+public class Main {
+	//#if Array
+	static int[] array = new int[10];
+	//#endif
+
+	public static void main(String[] args) {
+		//#if Array
+		System.out.println(array);
+		//#if !Structures
+		System.out.println("Structures");
+		//#endif
+		//#endif
+		//#if QuickSort
+		System.out.println(sort(array));
+		//#endif
+	}
+
+	//#if QuickSort
+	static int[] sort() {
+		int[] newArray = new int[10];
+		//#if Simulation
+		System.out.println("Statistics");
+		//#endif
+		return newArray;
+	}
+	//#endif
+}
+	\end{lstlisting}
+\end{document}

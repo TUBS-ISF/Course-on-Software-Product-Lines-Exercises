@@ -1,0 +1,194 @@
+\deftask{ConditionalPreprocessor}
+{\t{Preprocessor-Based Variability}{Präprozessor-basierte Variabilität}}{
+	\t{
+		You have inherited a codebase, in which the previous developers heavily used preprocessor macros.
+		Below is a snippet from the thermal monitoring module.
+	}{
+		Du hast eine Codebasis geerbt, in der die vorherigen Entwickler intensiv Präprozessor-Makros verwendet haben.
+		Unten ist ein Ausschnitt aus dem Temperaturüberwachungs\-modul.
+	}
+	
+	\myexample{\t{C Code Using Preprocessor Directives}{C-Code mit Präprozessor-Direktiven}}{
+		\includegraphics[scale=1.1]{code-preprocessor}
+	}
+	
+	\begin{enumerate}
+		\item \t{
+			What is a preprocessor and how does it support implementing variability in software product lines?
+		}{
+			Was ist ein Präprozessor und wie unterstützt er die Implementierung von Variabilität in Software-Produktlinien?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		\item \t{
+			Explain the role of the preprocessor in this code.
+		}{
+			Erkläre die Rolle des Präprozessors in diesem Code.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Assuming \texttt{PRECISION\_HIGH}, \texttt{UNIT\_KELVIN}, \texttt{MODE\_THERMAL}, and \texttt{SENSOR\_ADVANCED} are defined, while \texttt{EPSILON}, \texttt{SENSOR\_COUNT}, \texttt{CONVERT}, and \texttt{p\_t} are not pre-defined outside the given code snippet.
+			Show the resulting source code as it would appear after preprocessing, with all macros expanded and conditional compilation resolved.
+		}{
+			Angenommen, \texttt{PRECISION\_HIGH}, \texttt{UNIT\_KELVIN}, \texttt{MODE\_THERMAL} und \texttt{SENSOR\_ADVANCED} sind definiert, während \texttt{EPSILON}, \texttt{SENSOR\_COUNT}, \texttt{CONVERT} und \texttt{p\_t} außerhalb des gegebenen Code-Snippets nicht vordefiniert sind.
+			Gib den resultierenden Quellcode an, wie er nach dem Preprocessing erscheinen würde, mit allen expandierten Makros und aufgelöster bedingter Kompilierung.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Here we used the C preprocessor (CPP), but not all preprocessors are equally suitable in all contexts.
+			Compare the three preprocessors \texttt{CPP}, \texttt{Munge}, and \texttt{Antenna}.
+			In which types of projects would each be most appropriate?
+		}{
+			Hier wurde der C-Präprozessor (CPP) verwendet, aber nicht alle Präprozessoren sind in allen Kontexten gleichermaßen geeignet.
+			Vergleiche die drei Präprozessoren \texttt{CPP}, \texttt{Munge} und \texttt{Antenna}.
+			Für welche Arten von Projekten wäre jeder am besten geeignet?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{ConditionalLinuxKernel}
+{\t{Variability in the Linux Kernel}{Variabilität im Linux-Kernel}}{
+	\begin{enumerate}
+		\item \t{
+			Explain the role of \textsc{KConfig}, \textsc{KBuild}, \textsc{CPP}, and \textsc{MenuConfig}.
+			How do they differ, and what is the purpose of each?
+		}{
+			Erkläre die Rolle von \textsc{KConfig}, \textsc{KBuild}, \textsc{CPP} und \textsc{MenuConfig}.
+			Wie unterscheiden sie sich und was ist jeweils ihr Zweck?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			The Linux kernel uses a combination of tools to manage variability.
+			Below is a simplified \textsc{KBuild} snippet:
+		}{
+			Der Linux-Kernel verwendet eine Kombination von Tools zur Verwaltung von Variabilität.
+			Unten ist ein vereinfachtes \textsc{KBuild}-Snippet:
+		}
+		\myexample{\t{KBuild Snippet from Kernel Makefile}{KBuild-Snippet aus Kernel-Makefile}}{
+			\includegraphics[scale=1.1]{code-kbuild-makefile}
+		}
+		
+		\begin{enumerate}
+			\item \t{
+				Explain what each line in the Makefile snippet does.
+				How do \texttt{obj-y}, \texttt{obj-m}, and \texttt{obj-\$(...)} control the inclusion of features in the build?
+			}{
+				Erkläre, was jede Zeile im Makefile-Snippet macht.
+				Wie steuern \texttt{obj-y}, \texttt{obj-m} und \texttt{obj-\$(...)} die Einbindung von Features im Build?
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+			
+			\item \t{
+				Given the following configuration options:
+				\begin{itemize}
+					\item \texttt{CONFIG\_DEBUG\_MODE=y}
+				\end{itemize}
+				Which directories or files are compiled statically, treated as modules, or excluded from the build?
+			}{
+				Gegeben seien die folgenden Konfigurationsoptionen:
+				\begin{itemize}
+					\item \texttt{CONFIG\_DEBUG\_MODE=y}
+				\end{itemize}
+				Welche Verzeichnisse oder Dateien werden statisch kompiliert, als Module behandelt oder vom Build ausgeschlossen?
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+
+			\item \t{
+				What is the difference between the implementation of features with build systems (like \textsc{KBuild}) and clone-and-own with build systems (as discussed in an earlier exercise)?
+			}{
+				Was ist der Unterschied zwischen der Implementierung von Features mit Build-Systemen (wie \textsc{KBuild}) und Clone-and-Own mit Build-Systemen (wie in einer früheren Übung besprochen)?
+			}
+			\begin{solution}
+REDACTED
+			\end{solution}
+		\end{enumerate}
+	\end{enumerate}
+}
+
+\deftask{ConditionalFeatureTraceability}
+{\t{Feature Traceability}{Feature Traceability}}{
+	\t{
+		You are working on a Smart Grid Controller that adjusts its behavior depending on feature flags related to precision, sensor type, and logging.
+		Below is a simplified and configurable code snippet using conditional compilation.
+	}{
+		Du arbeitest an einem Smart-Grid-Controller, der sein Verhalten abhängig von Feature-Flags für Präzision, Sensortyp und Logging anpasst.
+		Unten ist ein vereinfachtes und konfigurierbares Code-Snippet mit bedingter Kompilierung.
+	}
+
+	\myexample{\t{Java Code with Preprocessor Directives}{Java-Code mit Präprozessor-Direktiven}}{
+		\includegraphics[scale=1.1]{code-gridcontroller-nested}
+	}
+
+	\begin{enumerate}
+		\item \t{
+		 	What is feature traceability?
+			Explain challenges related to feature traceability (i.e., code tangling, scattering, and replication).
+			To which degree do these apply to this code snippet?
+		}{
+			Was ist Feature Traceability (Rück\-verfolgbarkeit)?
+			Erkläre Herausforderungen im Zusammenhang mit Feature Traceability (Tangling, Scattering, und Replikation).
+			Inwieweit treffen diese auf dieses Code-Beispiel zu?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			What are the consequences of code tangling, scattering and replication?
+		}{
+			Welche Konsequenzen haben Tangling, Scattering und Replikation?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			By which means can feature traceability be ensured?
+			Discuss their benefits and drawbacks!
+		}{
+			Welche Möglichkeiten gibt es, um Feature Traceability sicherzustellen?
+			Diskutiere Vor- und Nachteile.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+	
+\deftask{ConditionalComparison}
+{\t{%
+	Comparison of Variability Implementation Techniques
+}{%
+	Vergleich von Implementierungstechniken für Variabilität
+}}{
+	\t{
+		Compare the advantages, disadvantages, and use cases of features with preprocessors and features with build systems.
+		Also include the techniques discussed in the lecture so far in your comparison.
+		Use examples to support your arguments.
+	}{
+		Vergleiche die Vor- und Nachteile sowie Anwendungsfälle von Features mit Präprozessoren und Features mit Build-Systemen.
+		Berücksichtige auch die bisher in der Vorlesung besprochenen Techniken in deinem Vergleich.
+		Verwende Beispiele zur Unterstützung deiner Argumente.
+	}
+
+	\begin{solution}
+REDACTED
+	\end{solution}
+}

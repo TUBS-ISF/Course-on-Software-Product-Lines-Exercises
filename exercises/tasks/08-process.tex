@@ -1,0 +1,320 @@
+\deftask{ProcessDomainApplicationEngineering}
+{\t{Domain and Application Engineering}{Domain und Application Engineering}}{
+	\t{
+		Complete the following figure with the process steps employed in \emph{domain} and \emph{application engineering}.
+		\begin{enumerate}
+			\item Fill in each box with the name of the corresponding step (outer and inner boxes!).
+			\item Add all missing edges / arrows.
+			\item How and where can custom development be supported?
+			\item Highlight which steps belong to the problem space and which steps belong to the solution space.
+		\end{enumerate}
+		Explain the resulting figure.
+		In your opinion, in which activity should you invest the most efforts and why?
+	}{
+		Vervollständige die folgende Grafik mit den Prozessschritten von \emph{Domain Engineering} und \emph{Application Engineering}.
+		\begin{enumerate}
+			\item Fülle jeden Kasten mit dem Namen des entsprechenden Schritts (äußere und innere Boxen!).
+			\item Ergänze alle fehlenden Kanten/Pfeile.
+			\item Wie und wo kann kundenspezifische Entwicklung unterstützt werden?
+			\item Markiere, welche Schritte zum \emph{Problem Space} und welche zum \emph{Solution Space} gehören.
+		\end{enumerate}
+		Erkläre die entstandene Abbildung.
+		Wo sollte deiner Ansicht nach der meiste Aufwand einfließen und warum?
+	}
+	\begin{center}
+		\resizebox{\linewidth}{!}{\input{../pics/spl-engineering.tex}}
+	\end{center}
+	\begin{enumerate}
+		\item[(e)] \t{
+			Besides, give examples for scenarios in which ...
+		}{
+			Nenne außerdem Beispielszenarien, in denen ...
+		}
+		\begin{enumerate}
+			\item
+			\t{almost all of the effort is invested in domain engineering}
+			{fast der ganze Aufwand beim Domain Engineering liegt,}
+			\item
+			\t{almost all of the effort is invested in application engineering}
+			{fast der ganze Aufwand beim Application Engineering liegt und}
+			\item
+			\t{the effort is balanced between domain and application engineering}
+			{etwa gleich viel Aufwand beim Domain und Application Engineering liegt.}
+		\end{enumerate}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{ProcessAdoptionStrategies}
+{\t{%
+	Adoption Strategies for Software Product Lines
+}{%
+	Adoptionsstrategien für Software-Produktlinien
+}}{
+	\begin{enumerate}
+	\item \t{
+		Explain three typical adoption strategies for introducing software product lines.
+	}{
+		Erkläre drei typische Adoptionsstrategien zur Einführung von Software-Pro\-dukt\-linien.
+	} 
+	\begin{solution}
+REDACTED
+	\end{solution}
+
+	\item \t{
+		Recommend the most suitable strategy for each scenario given below and justify your answer.
+	}{
+		Empfehle die am besten geeignete Strategie für jedes der folgenden Szenarien und begründe deine Antwort.
+	}
+	\begin{enumerate}[label=\roman*.]
+		\item \t{
+			A company has developed three separate CRM systems for different regions.
+			They share 60–70\% of features but were developed independently.
+			The company wants to unify the codebase to reduce maintenance costs while keeping region-specific capabilities.
+		}{
+			Ein Unternehmen hat drei separate CRM-Systeme für verschiedene Regionen entwickelt.
+			Sie teilen 60–70\% der Features, wurden aber unabhängig entwickelt.
+			Das Unternehmen möchte die Codebasis vereinheitlichen, um Wartungskosten zu reduzieren und gleichzeitig regionsspezifische Funktionen zu erhalten.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			A Software as a Service (SaaS) company started with a basic collaborative document editor.
+			Over time, they've added optional features like chat, version control, and real-time co-editing.
+			These are selectively enabled per customer.
+		}{
+			Ein Software-as-a-Service-Unternehmen begann mit einem einfachen kollaborativen Dokumenteneditor.
+			Im Laufe der Zeit wurden optionale Features wie Chat, Versionskontrolle und Echtzeit-Co-Editing hinzugefügt.
+			Diese werden pro Kunde selektiv aktiviert.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			A national government is designing citizen's websites for different states.
+			All websites must follow a strict federal specification with known features (e.g., tax filing, ID requests, appointments).
+			No legacy software is reused.
+		}{
+			Eine nationale Regierung entwirft Bürger-Webseiten für verschiedene Bundesländer.
+			Alle Webseiten müssen einer strikten föderalen Spezifikation mit bekannten Features folgen (z.B. Steuererklärung, Ausweisanträge, Terminvereinbarungen).
+			Keine Legacy-Software wird wiederverwendet.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			A small startup is planning a suite of finance apps: a budgeting tool, investment tracker, and tax calculator.
+			All are being developed from scratch.
+		}{
+			Ein kleines Startup plant eine Suite von Finanz-Apps: ein Budgetierungs-Tool, einen Investment-Tracker und einen Steuerrechner.
+			Alle werden von Grund auf entwickelt.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+\end{enumerate}
+}
+
+\deftask{ProcessCostAnalysis}
+{\t{%
+	Cost Analysis for the Extractive Adoption Strategy
+}{%
+	Kostenanalyse bei der extraktiven Adoptionsstrategie
+}}{
+	\t{
+		Explain the main message of the following figure:
+	}{
+		Erkläre die Kernaussagen der folgenden Abbildung.
+	}
+	\begin{center}
+		\includegraphics[width=.7\linewidth,page=6,trim=2cm 17.5cm 11.5cm 3.8cm,clip]{../pics/papers/Krueger2016.pdf}
+	\end{center}
+	\t{
+		In your answer refer to the following points:
+	}{
+		Gehe dabei auch auf folgende Aspekte ein:
+	}
+	\begin{enumerate}
+		\item
+		\t{
+			When is it beneficial to introduce a software product line with the extractive adoption strategy?
+		}{
+			Wann lohnt es sich demnach, eine Software-Produktlinie nach dem extraktiven Vorgehen einzuführen?
+		}
+		\item
+		\t{
+			How do the fix investment cost $\Delta_f$ relate with the variable cost $\Delta_v$?
+		}{
+			Wie hängen die fixen Investitionskosten $\Delta_f$ und variablen Kosten $\Delta_v$ zusammen?
+		}
+		\item
+		\t{
+			Why are the scenarios I and II problematic?
+		}{
+			Warum sind die Szenarien I und II problematisch?
+		}
+		\item \t{
+			Refer and explain in your answer the terms \emph{adoption barrier}, \emph{return-on-investment} and \emph{break-even-point}.
+		}{
+			Verwenden und erläutere in diesem Zusammenhang die Begriffe \emph{adoption barrier}, \emph{return-on-investment} und \emph{break-even-point}.
+		}
+	\end{enumerate}
+	\t{
+		To answer this task, you may read the marked sections of the paper attached below:
+	}{
+		Lies zur Bearbeitung ggf. die markierten Abschnitte des unten angehängten Papers:
+	}
+
+	\emph{Jacob Krüger, Wolfram Fenske, Jens Meinicke, Thomas Leich, and Gunter Saake. 2016.
+	Extracting Software Product Lines: A Cost Estimation Perspective.
+	In SPLC.
+	ACM, NY, USA, 354--361.}
+}
+
+\deftask{ProcessScenarios}
+{\t{%
+	Choosing Implementation Techniques
+}{%
+	Auswahl von Implementierungstechniken
+}}{
+	\t{
+		Which implementation technique(s) are most appropriate for the following product lines?
+		Justify your answer based on the features and constraints provided.
+	}{
+		Welche Implementierungstechnik(en) sind für die folgenden Produktlinien am besten geeignet?
+		Begründe deine Antwort basierend auf den angegebenen Features und Einschränkungen.
+	}
+	
+	\begin{enumerate}
+		\item \t{Mobile Banking App}{Mobile Banking App} \\
+		\t{
+			\textbf{Features:} biometric login, multi-currency support, custom themes, in-app chat
+		}{
+			\textbf{Features:} biometrischer Login, Mehrwährungsunterstützung, anpassbare Themes, In-App-Chat
+		} \\
+		\t{
+			\textbf{Constraints:} security-critical, cross-platform (Android/iOS), regulatory audits require feature traceability, only needed features should be delivered
+		}{
+			\textbf{Einschränkungen:} sicherheits\-kritisch, plattformübergreifend (Android/iOS), be\-hörd\-liche Audits erfordern Feature Traceability, nur benötigte Features sollen ausgeliefert werden
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{Game Engine with Mod Support}{Spiel-Engine mit Mod-Unterstützung} \\
+		\t{
+			\textbf{Features:} physics engines, rendering backends, audio plugins, mod loader
+		}{
+			\textbf{Features:} Physik-Engines, Rendering-Backends, Audio-Plugins, Mod-Loader
+		} \\
+		\t{
+			\textbf{Constraints:} third-party mods must be integrated without recompilation, runtime loading of user-selected features, real-time performance must be preserved
+		}{
+			\textbf{Einschränkungen:} Mods von Drittanbietern müssen ohne Neukompilierung integriert werden, Laden von Benutzer-gewählten Features zur Laufzeit, Echtzeit-Performance muss erhalten bleiben
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{Smart Car}{Smart Car} \\
+		\t{
+			\textbf{Features:} real-time sensor monitoring, GPS, Lidar, cameras, voice UI, driver assistance, over-the-air updates
+		}{
+			\textbf{Features:} Echtzeit-Sensor-Überwachung, GPS, Lidar, Kameras, Sprach-UI, Fahrassistenz, Over-the-Air-Updates
+		} \\
+		\t{
+			\textbf{Constraints:} deployed on varied hardware platforms, strict real-time constraints, must pass ISO 26262 safety certification, must run on low-memory devices (64 KB RAM)
+		}{
+			\textbf{Einschränkungen:} auf verschiedenen Hardware-Plattformen eingesetzt, strik\-te Echtzeitanforderungen, muss ISO 26262 Sicherheitszertifizierung bestehen, muss auf Geräten mit wenig Speicher laufen (64 KB RAM)
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{Mental Health App}{Mental-Health-App} \\
+		\t{
+			\textbf{Features:} guided meditations, journaling, therapy chat, mood analytics
+		}{
+			\textbf{Features:} geführte Meditationen, Tagebuch, Therapie-Chat, Stimmungsanalyse
+		} \\
+		\t{
+			\textbf{Constraints:} each user has a different license profile, must support offline use, features are toggled on/off per user
+		}{
+			\textbf{Einschränkungen:} jeder Benutzer hat ein anderes Lizenzprofil, muss Offline-Nutzung unterstützen, Features werden pro Benutzer aktiviert/deaktiviert
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{ProcessChart}
+{\t{%
+	A Chart of Implementation Techniques
+}{%
+	Implementierungstechniken-Schaubild
+}}{
+	\t{
+		Develop an infographic, diagram, or poster that summarizes and explains the most important relationships regarding the implementation techniques covered in this lecture.
+		Which relationships and concepts you consider important and which presentation form you choose is up to you, as long as you can explain your graphic.
+		You can limit yourself to the relationships discussed in the lecture and exercise, but you can also incorporate your own thoughts and ideas.
+		For example, what conclusion you personally draw from this section of the lecture.
+		Below you will find some suggestions that you can consider when designing your graphic (but don't have to).
+	}{
+		Entwickle eine Infografik bzw. ein Schaubild oder Poster, welche(s) die wichtigsten Zusammenhänge rund um die in dieser Vorlesung behandelten Implementierungstechniken zusammenfasst und erklärt.
+		Welche Zusammenhänge und Begriffe du als wichtig erachtest und welche Darstellungsform du wählst, bleibt dir überlassen, so lange du deine Grafik erklären kannst.
+		Du kannst dich auf die in der Vorlesung und Übung besprochenen Zusammenhänge beschränken, aber auch deine eigenen Gedanken und Ideen einfließen lassen.
+		Zum Beispiel welches Fazit du persönlich aus diesem Abschnitt der Vorlesung ziehst.
+		Im Folgenden findest du einige Anregungen, die du bei der Gestaltung deiner Grafik berücksichtigen kannst (aber nicht musst).
+	}
+	\begin{enumerate}
+	\item \t{possible presentation forms:}{mögliche Darstellungsformen:}
+		\begin{enumerate}
+		\item \t{
+			Concept/Mind Map, ontology/semantic network, organizational chart, flowchart, history/timeline, pictograms/illustrations, mosaic, \ldots
+		}{
+			Concept/Mind Map, Ontologie/semantisches Netz, Organigramm, Flussdiagramm, Historie/Zeitstrahl, Piktogramme/Illustrationen, Mosaik, \ldots
+		}
+		\end{enumerate}
+	\item \t{possible relationships:}{mögliche Zusammenhänge:}
+		\begin{enumerate}
+		\item \t{
+			\emph{Dimensions of variability} such as binding time, tool-/language-based, annotative/compositional, static/dynamic
+		}{
+			\emph{Dimensionen der Variabilität} wie Bindungszeitpunkt, tool-/sprachbasiert, annotativ/kompositional, statisch/dynamisch
+		}
+		\item \t{
+			\emph{Quality criteria} such as feature traceability, separation of concerns, information hiding/cohesion/encapsulation, granularity, uniformity, obliviousness
+		}{
+			\emph{Qualitätskriterien} wie Feature Traceability, Separation of Concerns, Information Hiding/Kohäsion/Kapselung, Granularität, Uniformität, Obliviousness
+		}
+		\item \t{
+			\emph{Problems} such as code tangling/scattering, code replication/cloning, preplanning, crosscutting concerns, fragile evolution
+		}{
+			\emph{Probleme} wie Code Tangling/Scattering, Code Replication/Cloning, Preplanning, querschneidende Belange, Fragile Evolution
+		}
+		\item \t{
+			\emph{Scenarios} such as safety- or performance-critical systems, fine-grained extensions, adoption strategy, embedded systems, training effort, scalability
+		}{
+			\emph{Szenarien} wie sicherheits- oder performance-kritische Systeme, feingranulare Erweiterungen, Adoptionsstrategie, eingebettete Systeme, Schulungsaufwand, Skalierbarkeit
+		}
+		\item \t{and possibly more}{und ggf. weitere}
+		\end{enumerate}
+	\end{enumerate}
+	\t{
+		When in doubt, follow the Unix philosophy \emph{do one thing and do it well}.
+		That is, don't try to explain \emph{all} relationships (which would probably lead to an overloaded and complex graphic), but rather some selected ones (which you then explain meaningfully and in sufficient detail and put into context).
+		Tables are not admitted as a solution.
+	}{
+		Verfolge im Zweifelsfall die Unix-Philosophie \emph{do one thing and do it well}.
+		Das heißt, versuche nicht, \emph{alle} Zusammenhänge zu erläutern (was vermutlich zu einer überladenen und komplexen Grafik führt), sondern einige ausgewählte (die du dann sinnvoll und hinreichend detailliert erklärst und in Bezug setzt).
+		Tabellen sind als Lösung nicht zugelassen.
+	}
+}

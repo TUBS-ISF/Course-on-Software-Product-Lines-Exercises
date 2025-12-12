@@ -1,0 +1,189 @@
+\deftask{TestingCombinatorialInteractionTesting}
+{\t{Combinatorial Interaction Testing}{Combinatorial Interaction Testing}}{
+	\begin{enumerate}
+		\item \t{
+			How can pairwise interaction sampling be used to detect feature interactions in a software product line?
+			What are the differences between pairwise and $t$-wise interaction sampling for $t > 2$?
+			What is the difference between $t$-wise interaction coverage and statement, branch, or condition coverage?
+		}{
+			Wie kann \emph{Pairwise Interaction Sampling} eingesetzt werden, um Feature-Interak\-tio\-nen in einer Produktlinie zu erkennen?
+			Wie unterscheiden sich \emph{Pairwise} und \emph{$t$-Wise Interaction Sampling} für $t > 2$?
+			Was ist der Unterschied zwischen \emph{$t$-Wise Interaction Coverage} und \emph{Statement-, Branch- oder Condition Coverage}?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Determine all pairs of features ($t=2$) relevant for sampling the following feature model.
+			Which features and which pairs of features do not have to be considered?
+		}{
+			Bestimme alle für Sampling kombinatorisch relevanten Feature-Paare ($t=2$) für das folgende Feature-Modell.
+			Welche Features und Feature-Kombinationen müssen hierbei nicht beachtet werden und warum?
+		}
+		\myexample{\t{%
+			Feature Model
+		}{%
+			Feature-Modell
+		}}{
+			\centering\sffamily
+			\featureDiagram{
+				GraphLibrary,abstract
+				[Edge,mandatory,abstract[Directed,concrete,alternative][Undirected,concrete]]
+				[Weighted,optional,concrete]
+				[Algorithm,optional,abstract[Cycle,concrete,or][ShortestPath,concrete]]
+			}
+			\\
+			$\text{Cycle} \pimplies \text{Directed}$ \\
+			$\text{ShortestPath} \pimplies \text{Directed} \pand \text{Weighted}$
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Do the following configurations suffice to cover all relevant pairwise feature interactions from above?
+			If they do not, add further configurations until all relevant pairwise interactions are covered.
+			(For brevity, we abbreviate feature names to their first letter.)
+		}{
+			Reichen die folgenden Konfigurationen aus, um alle oben bestimmten paarweisen Feature-Interaktionen abzudecken?
+			Wenn nicht, füge weitere Konfigurationen hinzu, bis alle paarweisen Interaktionen abgedeckt sind.
+			(Wir kürzen hier die Feature-Namen auf ihren Anfangsbuchstaben ab.)
+		}
+		\begin{center}
+			\begin{tabular}{lcccccccc}
+				\hline
+				\textbf{Name} & \textbf{G} & \textbf{E} & \textbf{D} & \textbf{U} & \textbf{W} & \textbf{A} & \textbf{C} & \textbf{S} \\ \hline\hline
+				$c_1$ & 1 & 1 & 1 & 0 & 0 & 0 & 0& 0 \\ \hline
+				$c_2$ & 1 & 1 & 0 & 1 & 0 & 0 & 0& 0 \\ \hline
+				$c_3$ & 1 & 1 & 0 & 1 & 1 & 0 & 0& 0 \\ \hline
+				$c_4$ & 1 & 1 & 1 & 0 & 1 & 1 & 1& 1 \\ \hline
+			\end{tabular}
+		\end{center}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{TestingSolutionSpaceSampling}
+{\t{Solution-Space Sampling}{Solution-Space Sampling}}{
+	\t{
+		Consider the following product line for a configurable \texttt{Edge} datatype:
+	}{
+		Gegeben sei folgende Produktlinie für eine konfigurierbare \texttt{Edge}-Datenstruktur:
+	}
+	\myexample{\t{Feature Model}{Feature-Modell}}{
+		\centering\sffamily
+		\featureDiagram{
+			Edge,abstract
+			[Weighted,optional,concrete]
+			[Coloring,optional,abstract
+			[SimpleColor,alternative,concrete]
+			[MultiColor,concrete]]
+			[Direction,mandatory,abstract
+			[Directed,alternative,concrete]
+			[Undirected,concrete]]
+		}\\[1ex]
+		$\text{MultiColor} \pimplies \text{Weighted}$
+	}
+	\myexample{\t{Annotated Source Code}{Annotierter Quelltext}}{
+		\begin{tabular}[t]{@{}c@{\hspace{0.02\linewidth}}c@{}}
+			\includegraphics[width=0.38\linewidth]{edge-feature-code-1} &
+			\raisebox{0ex}{\includegraphics[width=0.42\linewidth]{edge-feature-code-2}}
+		\end{tabular}
+	}
+	\begin{enumerate}
+		\item \t{
+			Based on the above feature model and source code, construct a minimal sample of valid configurations that achieves coverage of \texttt{\#if} blocks (Tartler et al. 2012).
+			Justify your answer.
+		}{
+			Basiert auf dem obigen Feature-Modell und dem Quelltext, konstruiere ein minimales Sample (also eine Stichprobe) von validen Konfigurationen, das eine Coverage aller \texttt{\#if}-Blöcke (Tartler et al. 2012) erreicht.
+			Begründe deine Antwort.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Construct a second minimal sample that achieves pairwise presence-condition coverage (Krieter et al. 2022).
+			Justify your answer.
+		}{
+			Konstruiere ein zweites minimales Sample, das eine \emph{Pairwise Presence-Condition Coverage} (Krieter et al. 2022) erreicht.
+			Begründe deine Antwort.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			For each of the following strategies, how many configurations do we have to test at least?
+			\begin{enumerate}
+				\item Product-based strategy
+				\item Sample-based strategy using \texttt{\#if} block coverage
+				\item Sample-based strategy using pairwise presence-condition coverage
+			\end{enumerate}
+			Under which circumstances would each strategy be preferred?
+		}{
+			Wie viele Konfigurationen müssen für jede der folgenden Strategien mindestens getestet werden?
+			\begin{enumerate}
+				\item Produktbasierte Strategie
+				\item Sample-basierte Strategie mit \texttt{\#if}-Block Coverage
+				\item Sample-basierte Strategie mit Pairwise Presence-Condition Coverage
+			\end{enumerate}
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{TestingSamplingDiscussion}
+{\t{Limits of Sample-Based Testing}{Grenzen des Sample-basierten Testens}}{
+	\begin{enumerate}
+		\item \t{
+			What are the advantages and disadvantages of relying on a small sample of configurations instead of testing all valid products in a software product line?
+		}{
+			Was sind die Vor- und Nachteile, wenn man sich auf ein kleines Sample von Konfigurationen verlässt, anstatt alle validen Produkte in einer Software-Produktlinie zu testen?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		
+		\item \t{
+			Besides sample-based testing (covering $t$-wise interactions, \texttt{\#if} blocks, or presence-conditions) and product-based testing, which alternative testing strategies can you think of?
+			When would you use which testing strategy?
+		}{
+			Welche alternativen Teststrategien kannst du dir neben Sample-basiertem Testen (durch Coverage von $t$-wise-Interaktionen, \texttt{\#if}-Blöcken oder Presence Conditions) und produktbasiertem Testen noch vorstellen?
+			Wann würdest du welche Teststrategie einsetzen?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			In practice, how can a suitable value of $t$ for $t$-wise interaction sampling be chosen?
+			Discuss with examples or scenarios where lower or higher values of $t$ might be appropriate.
+		}{
+			Wie kann in der Praxis ein geeigneter Wert von $t$ für $t$-Wise Interaction Sampling gewählt werden?
+			Diskutiere mit Beispielen oder Szenarien, wo niedrigere oder höhere Werte von $t$ angemessen sein könnten.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			What is the difference between $t$-wise interaction coverage and $t$-wise presence-condition coverage?
+			Discuss when which strategy is more appropriate.
+		}{
+			Was ist der Unterschied zwischen $t$-wise Interaction Coverage und $t$-wise Presence Condition Coverage?
+			Diskutiere, welche Strategie wann angemessener ist.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+	\begin{solution}
+REDACTED
+	\end{solution}
+}

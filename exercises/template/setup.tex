@@ -1,0 +1,30 @@
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{tcolorbox}
+\usepackage{titling}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{ifthen}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{pdfpages}
+
+\usetikzlibrary{trees}
+
+% necessary for pics/spl-engineering.tex
+\usetikzlibrary{positioning}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows, arrows.meta}
+
+% whether to include exercise solutions
+\newif\ifsolution
+
+% whether to use German texts
+\newif\ifgerman
+\newcommand{\enablegerman}{\germantrue\usepackage[german]{babel}}
+\newcommand{\enableoverview}{\renewcommand{\theexercise}{overview}}
+\newcommand{\enablesolution}{\solutiontrue}
+\renewcommand{\t}[2]{\ifgerman\ifblank{#2}{#1\todo{!}}{#2}\else\ifblank{#1}{#2\todo{!}}{#1}\fi}

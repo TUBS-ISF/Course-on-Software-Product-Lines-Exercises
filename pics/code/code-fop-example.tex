@@ -1,0 +1,33 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{modernjava}{
+	language=Java,
+	tabsize=2,
+	breaklines=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+}
+
+\begin{document}
+	\begin{lstlisting}[style=modernjava]
+		class Logger {
+			void log(String msg) {
+				System.out.println("Base log: " + msg);
+			}
+		}
+		
+		// Feature: SecureLogging
+		refines class Logger {
+			void log(String msg) {
+				System.out.println("Encrypted: " + encrypt(msg));
+			}
+		}
+	\end{lstlisting}
+\end{document}

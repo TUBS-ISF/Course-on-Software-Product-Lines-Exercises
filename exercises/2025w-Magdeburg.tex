@@ -1,0 +1,122 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{template/setup}
+
+\newcommand{\theexercise}{9}
+\enablegerman
+% \enableoverview
+\enablesolution
+
+\author{Elias Kuiter, Gunter Saake}
+\title{\t{Software Product Lines}{Software-Produktlinien}}
+\newcommand{\theuniversity}{magdeburg}
+\newcommand{\thesemester}{\t{Winter Term}{Wintersemester} 2025/26}
+% \newcommand{\theroom}{G05-122}
+
+\input{template/exercise}
+\input{tasks/tasks}
+
+\begin{document}
+
+\exercise{1}{\t{Introduction}{Einführung}}{}{ % {\t{Discussed on}{Wird besprochen am} 2025-04-14}{
+	\IntroductionBackpackCustomization[]
+	\IntroductionFastfoodCustomization[]
+	\IntroductionSoftwareProductLines[]
+	\IntroductionSPLPromises[]
+	\IntroductionSPLChallenges[]
+}
+
+\exercise{2}{\t{Runtime Variability and Design Patterns}{Laufzeitvariabilität und Entwurfsmuster}}{}{
+	\RuntimeVariabilityConfiguration[]
+	\RuntimeVariabilityRealization[]
+	\RuntimeDesignPatterns[]
+	\RuntimeDesignPatternsGameAudio[]
+}
+
+\exercise{3}{\t{Compile-Time Variability with Clone-and-Own}{Variabilität zur Übersetzungszeit mit Clone-and-Own}}{}{
+	\CloneAndOwnFundamentals[]
+	\CloneAndOwnStrategicDecisions[]
+	\CloneAndOwnVersionControlSystems[]
+	\CloneAndOwnBuildSystems[]
+	\CloneAndOwnComparison[]
+}
+
+\exercise{4}{\t{Feature Modeling}{Feature-Modellierung}}{}{
+	\ModelingFundamentals[]
+	\ModelingAnalysis[]
+	\ModelingTransformation[]
+	\ModelingDerivation[]
+	\ModelingCountSubwaySandwiches[]
+}
+
+\exercise{5}{\t{Techniques for Compile-Time Features}{Techniken für Variabilität zur Übersetzungszeit}}{}{
+	\ConditionalPreprocessor[]
+	\ConditionalLinuxKernel[]
+	\ConditionalFeatureTraceability[]
+ 	\ConditionalComparison[]
+}
+
+\exercise{6}{\t{Techniques for Modular Variability}{Techniken für modulare Variabilität}}{}{
+	\ModularFundamentals[]
+	\ModularComponentGranularity[]
+	\ModularServiceComposition[]
+	\ModularFramework[]
+	\ModularComparison[]
+	\newpage
+	% discussed in the last exercise
+	\PracticeDevelopSPL[Abgabe \underline{verpflichtend} für M.Sc.]
+}
+
+\exercise{7}{\t{Language-Based Techniques}{Sprachbasierte Techniken}}{}{
+	\LanguagesFOPFundamentals[]
+	\LanguagesFeatureHouseComposition[]
+	\LanguagesAOPFundamentals[]
+	\LanguagesAspectJPointcuts[]
+	\LanguagesComparison[]
+	\newpage
+	% discussed in the last exercise
+	\ProcessChart[Abgabe \underline{verpflichtend} für alle]
+}
+
+\exercise{8}{\t{Development Process}{Entwicklungsprozess}}{}{
+	\ProcessDomainApplicationEngineering[]
+	\ProcessAdoptionStrategies[]
+	\ProcessCostAnalysis[]
+	\ProcessScenarios[]
+	% attach paper for cost analysis task
+	\includepdf[pages=-]{../pics/papers/Krueger2016.pdf}
+}
+
+\exercise{9}{\t{Feature Interactions}{Feature-Interaktionen}}{}{
+	\InteractionsFundamentals[]
+	\InteractionsConsequences[]
+	\InteractionsVariabilityBugDatabase[]
+	\InteractionsStrategies[]
+	\InteractionsDetection[]
+}
+
+\exercise{10}{\t{Product-Line Analyses}{Analyse von Produktlinien}}{}{
+	\AnalysesStrategies[]
+	\AnalysesProblemSolutionSpace[]
+	\AnalysesFeatureMapping[]
+	\AnalysesVariableCode[]
+	\AnalysisComplexity[]
+	% attach paper for complexity task
+	\includepdf[pages=-]{../pics/papers/Mendonca2009.pdf}
+}
+
+\exercise{11}{\t{Product-Line Testing}{Testen von Produktlinien}}{}{
+	\TestingCombinatorialInteractionTesting[]
+	\TestingSolutionSpaceSampling[]
+	\TestingSamplingDiscussion[]
+}
+
+% bonus exercise in Magdeburg
+\exercise{12}{\t{Evolution and Maintenance}{Evolution und Wartung}}{}{
+	\EvonanceMaintenanceEvolution[]
+	\EvonanceFeatureModelEvolution[]
+	\EvonanceRefactoring[]
+	\EvonanceReengineering[]
+}
+
+\end{document}

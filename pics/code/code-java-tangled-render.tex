@@ -1,0 +1,53 @@
+\documentclass{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{javawithpp}{
+	language=Java,
+	tabsize=2,
+	breaklines=true,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{Purple}\ttfamily, % Use purple for all comments (incl. //#if)
+	showstringspaces=false,
+	columns=fullflexible
+}
+
+\begin{document}
+	\begin{lstlisting}[style=javawithpp]
+		public class Change {
+			public Object change(Object obj, Operation op) {
+				if  (op.objectIsChangeable(obj)) {
+					saveUndo(obj);					
+					try (FileWriter fw = new FileWriter("log.txt", true)) {				
+						fw.write("Changing: " + obj); 
+					} catch (IOException e) { 
+						e.printStackTrace(); 
+					}
+					return op.apply(obj);
+				} else {
+					try (FileWriter fw = new FileWriter("log.txt", true)) {				
+						fw.write("Not changeable: " + obj); 
+					} catch (IOException e) { 
+						e.printStackTrace(); 
+					}
+				}
+				return obj;				
+			}
+			
+			private void saveUndo(Object obj) {
+				try (FileWriter fw = new FileWriter("log.txt", true)) {						
+					try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("backup"))) { 
+						oos.writeObject(obj);
+					}
+					fw.write("Saved backup"); 
+				} catch (IOException e) { 
+					e.printStackTrace(); 
+				}
+			}
+		}
+	\end{lstlisting}
+	
+\end{document}

@@ -1,0 +1,195 @@
+\deftask{InteractionsFundamentals}
+{\t{Feature Interactions: Fundamentals}{Grundlagen zu Feature-Interaktionen}}{
+	\begin{enumerate}
+		\item \t{
+			Explain the term \emph{feature interaction} based on an example.
+		}{
+			Erläutere den Begriff der Feature-Interaktion an einem eigenen Beispiel.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Describe the meaning of a \emph{higher-order} feature interaction.
+			Give an example of such an interaction.
+		}{
+			Was sind Feature-Interaktionen höherer Ordnung?
+			Nenne ein Beispiel.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			How many $t$-wise feature interactions are possible in a product line consisting of $n$ optional, unconstrained features?
+			State formulas to compute this number for any $t$ and $t \in \{0,1,2,n\}$, specifically.
+			How many feature interactions (across all $t$) are possible in total?
+		}{
+			Wie viele \emph{$t$-wise} Feature-Interaktionen kann eine Produktlinie mit $n$ optionalen, unab\-hän\-gigen Features maximal haben?
+			Gib Formeln zur Berechnung dieser Zahl für beliebiges $t$ sowie konkret für $t \in \{0,1,2,n\}$ an.
+			Wie viele Feature-Interaktionen (über alle $t$ hinweg) sind insgesamt möglich?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{InteractionsConsequences}
+{\t{Consequences of Feature Interactions}{Konsequenzen von Feature-Interaktionen}}{
+	\begin{enumerate}
+		\item \t{
+			Which (positive and negative) consequences can feature interactions have for software-product-line engineering?
+		}{
+			Welche (positiven und negativen) Konsequenzen können Feature-Interaktionen für die Entwicklung von Software-Produktlinien haben?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			How can the number of expected feature interactions be reduced?
+		}{
+			Wie kann man die Anzahl der zu erwartenden Feature-Interaktionen reduzieren?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			After this reduction, how can the remaining feature interactions be detected?
+		}{
+			Wie kann man die verbleibenden Feature-Interaktionen nach dieser Reduktion detektieren?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{InteractionsVariabilityBugDatabase}
+{\t{Variability-Bug Analysis}{Analyse eines Variabilitäts-Bugs}}{
+	\t{
+		Explore the \emph{Variability Bug Database (VBDb)}\footnote{\url{https://vbdb.bitbucket.io/}} and select one real-world interaction fault (under ``Database'').
+	}{
+		Erkunde die \emph{Variability Bug Database (VBDb)}\footnote{\url{https://vbdb.bitbucket.io/}} und wähle einen echten Interaktionsfehler aus (unter ``Database'').
+	}
+
+	\begin{enumerate}
+		\item \t{
+			Explain the issue in your own words.
+			Which features or options were involved?
+		}{
+			Erkläre das Problem in eigenen Worten.
+			Welche Features oder Optionen waren beteiligt?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Classify the type of feature interaction (wanted/unwanted, static/dynamic).
+			Is it only caused by the presence or absence of features, or both?
+			Of which order $t$ is it?
+		}{
+			Klassifiziere die Art der Feature-Interaktion (gewollt/ungewollt, statisch/dynamisch).
+			Ist sie nur durch das Vorhandensein oder Fehlen von Features verursacht, oder durch beides?
+			Welcher Ordnung $t$ ist sie?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Analyze the bugfix provided in the VBDb.
+			Does it apply one of the six strategies for handling feature interactions discussed in the lecture? If so, which one?
+			Would you fix the issue differently? If so which strategy would you apply?
+		}{
+			Analysiere den in der VBDb bereitgestellten Bugfix.
+			Wendet er eine der sechs in der Vorlesung diskutierten Strategien zum Umgang mit Feature-Interaktionen an? Wenn ja, welche?
+			Würdest du das Problem anders beheben? Wenn ja, welche Strategie würdest du anwenden?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+	\begin{solution}
+REDACTED
+	\end{solution}
+
+}
+
+\deftask{InteractionsStrategies}
+{\t{Strategies for Resolving Feature Interactions}{Strategien zur Auflösung von Feature-Interaktionen}}{
+	\t{
+		Different strategies exist to handle feature interactions in software product lines, each with its own trade-offs.
+		Compare any two strategies from the lecture by discussing their benefits, limitations, and appropriate scenarios for use.
+		Illustrate your comparison using a concrete example.
+	}{
+		Es gibt verschiedene Strategien, um mit Feature-Interaktionen in Software-Produktlinien umzugehen, jede mit ihren eigenen Vor- und Nachteilen.
+		Vergleiche zwei beliebige Strategien aus der Vorlesung, indem du ihre Vorteile, Einschränkungen und geeignete Anwendungsszenarien diskutierst.
+		Veranschauliche deinen Vergleich anhand eines konkreten Beispiels.
+	}
+
+	\begin{solution}
+REDACTED
+	\end{solution}
+}
+
+\deftask{InteractionsDetection}
+{\t{%
+	Detecting Variability Bugs in Configurable Code
+}{%
+	Variability-Bugs in konfigurierbarem Code finden
+}}{
+	\t{
+		Consider the following configurable Java code snippet.
+		The system supports the following optional features (defined via preprocessor macros):
+		\texttt{SECURE\_LOGIN}, \texttt{CACHING}, and \texttt{LOGGING}.
+	}{
+		Gegeben sei das folgende konfigurierbare Java-Code-Snippet.
+		Das System unterstützt die folgenden optionalen Features (definiert über Präprozessor-Makros):
+		\texttt{SECURE\_LOGIN}, \texttt{CACHING} und \texttt{LOGGING}.
+	}
+
+	\myexample{\t{%
+		A configurable login handler
+	}{%
+		Ein konfigurierbarer Login-Handler
+	}}{
+		\includegraphics[width=1.2\linewidth]{code-feature-interaction-debug}
+	}
+
+	\begin{enumerate}
+		\item \t{
+			Identify configurations in which the above code does not compile, as well as configurations in which the code compiles but fails at runtime.
+			What causes these issues?
+		}{
+			Identifiziere Konfigurationen, in denen der obige Code nicht kompiliert, sowie Konfigurationen, in denen der obige Code kompiliert, aber zur Laufzeit fehlschlägt.
+			Was verursacht diese Probleme?
+		}
+
+		\item \t{
+			Are these static or dynamic feature interactions?
+			Of which order $t$ are they?
+			Are these ``real'' feature interactions (tied to the inherent complexity of the interacting features)?
+		}{
+			Sind dies statische oder dynamische Feature-Interaktionen?
+			Welcher Ordnung $t$ sind sie?
+			Sind dies ``echte'' Feature-Interaktionen (bedingt durch die inhärente Komplexität der interagierenden Features)?
+		}
+
+		\item \t{
+			Would testing with the default configuration (\texttt{SECURE\_LOGIN}, \texttt{CACHING}, and \texttt{LOGGING}) have caught these issues?
+			Suppose you did not identify these interactions yet -- which other configurations would you also test to increase the chances of detecting bugs?
+		}{
+			Hätte das Testen mit der Standard-Konfiguration (\texttt{SECURE\_LOGIN}, \texttt{CACHING} und \texttt{LOGGING}) diese Probleme erkannt?
+			Angenommen, du hättest diese Interaktionen noch nicht identifiziert – welche anderen Konfigurationen würdest du noch testen, um die Chancen zur Fehlererkennung zu erhöhen?
+		}
+	\end{enumerate}
+
+	\begin{solution}
+REDACTED
+	\end{solution}
+}

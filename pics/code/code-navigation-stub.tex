@@ -1,0 +1,58 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{modernjava}{
+	language=Java,
+	tabsize=2,
+	breaklines=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+}
+
+\begin{document}
+	\begin{lstlisting}[style=modernjava]
+		// Enum for travel modes
+		enum Mode {
+			DRIVING, WALKING, CYCLING
+		}
+		
+		class Navigator {
+			// Declare configuration or strategy fields if needed
+			
+			Navigator() {
+				// Initialize configuration if necessary
+			}
+			
+			void navigate() { // Define the correct  parameters for navigate()
+				// Insert logic in conditional statements
+				if () {
+					System.out.println("Calculating driving route...");
+				} else if () {
+					System.out.println("Calculating walking route...");
+				} else if () {
+					System.out.println("Calculating cycling route...");
+				}
+			}
+		}
+		
+		class Route {
+			// Simple placeholder class for route data
+		}
+		
+		public class Main {
+			public static void main(String[] args) {
+				Route route = new Route();
+				Navigator nav = new Navigator();
+				// Call nav.navigate() with proper configuration or arguments
+				nav.navigate();
+				
+			}
+		}
+	\end{lstlisting}
+\end{document}

@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstset{
+	language=[gnu]make,
+	tabsize=2,
+	breaklines=true,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{ForestGreen}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+}
+
+\begin{document}
+	\begin{lstlisting}
+		obj-y   += core/
+		obj-m   += net/
+		obj-$(CONFIG_USB_SUPPORT) += drivers/usb/
+		obj-$(CONFIG_DEBUG_MODE) += debug/
+	\end{lstlisting}
+\end{document}

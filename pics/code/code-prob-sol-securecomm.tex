@@ -1,0 +1,42 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{spljava}{
+	language=Java,
+	tabsize=2,
+	breaklines=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+}
+\begin{document}
+	\begin{lstlisting}[style=spljava]
+class SecureComm {
+	//#if TLS
+	void sendSecure() {
+		// encrypted transmission
+	}
+	//#endif
+	
+	//#if AUTH
+	void authenticate() {
+		checkUser();
+		sendSecure(); 
+	}
+	//#endif
+	
+	//#if LOGGING
+	//#if TLS
+	void logSession() {
+		Logger.log("TLS session started");
+	}
+	//#endif
+	//#endif
+};
+	\end{lstlisting}
+\end{document}

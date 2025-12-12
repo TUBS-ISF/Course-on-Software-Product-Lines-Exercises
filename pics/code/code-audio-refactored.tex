@@ -1,0 +1,38 @@
+\documentclass{standalone}
+\usepackage{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{modernjava}{
+	language=Java,
+	tabsize=2,
+	breaklines=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{green}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible,
+}
+
+\begin{document}
+	\begin{lstlisting}[style=modernjava]
+		interface AudioOutput {
+			void play(String sound);
+		}
+		
+		class AudioManager {
+			List<AudioOutput> outputs = new ArrayList<>();
+			
+			void registerOutput(AudioOutput output) {
+				outputs.add(output);
+			}
+			
+			void playSound(String sound) {
+				for (AudioOutput output : outputs) {
+					output.play(sound);
+				}
+			}
+		}
+	\end{lstlisting}
+\end{document}

@@ -1,0 +1,241 @@
+\deftask{LanguagesFOPFundamentals}
+{\t{Feature-Oriented Programming Fundamentals}{Grundlagen zu Feature-orientierter Programmierung}}{
+	\begin{enumerate}
+		\item \t{
+			Explain the basic ideas of \emph{feature-oriented programming} (FOP).
+			What do the terms \emph{feature}, \emph{collaboration}, \emph{role}, \emph{class}, and \emph{refinement} mean in the context of FOP?
+			Illustrate your explanations with a short example.
+		}{
+			Erkläre die Grundideen der \emph{feature-orientierten Programmierung} (FOP).
+			Was bedeuten die Begriffe \emph{Feature}, \emph{Kollaboration}, \emph{Rolle}, \emph{Klasse} und \emph{Verfeinerung} im Kontext von FOP?
+			Illustriere deine Erklärung mit einem kurzen Beispiel.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Discuss how FOP solves the \emph{feature-traceability problem}.
+		}{
+			Diskutiere, wie FOP das \emph{Feature-Traceability-Problem} löst.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			What does the \emph{principle of uniformity} mean in FOP?
+			Why is it important when managing multiple types of artifacts in a software-product line?
+			Give an example where a feature spans more than one artifact type.
+		}{
+			Was bedeutet das \emph{Prinzip der Uniformität} in FOP?
+			Warum ist es wichtig beim Verwalten mehrerer Artefakttypen in einer Software-Produktlinie?
+			Gib ein Beispiel, bei dem ein Feature mehrere Artefakttypen umfasst.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{LanguagesFeatureHouseComposition}
+{\t{Composition in FeatureHouse}{Komposition in FeatureHouse}}{
+	\t{
+		Let \texttt{Game}, \texttt{Multiplayer}, and \texttt{Achievements} be three classes created using FeatureHouse.
+	}{
+		Seien \texttt{Game}, \texttt{Multiplayer} und \texttt{Achievements} drei Klassen, die mit FeatureHouse erstellt wurden.
+	}
+
+	\begin{minipage}[t]{0.3\textwidth}\vspace{0pt}
+		\centering\texttt{Game}\\
+		~\\
+		\includegraphics{code-fst-base}
+	\end{minipage}
+	\begin{minipage}[t]{0.3\textwidth}\vspace{0pt}
+		\centering\texttt{Multiplayer}\\
+		~\\
+		\includegraphics{code-fst-first}
+	\end{minipage}
+	\begin{minipage}[t]{0.3\textwidth}\vspace{0pt}
+		\centering\texttt{Achievements}\\
+		~\\
+		\includegraphics{code-fst-second}
+	\end{minipage}
+
+	\begin{enumerate}
+		\item \t{
+			What is the purpose of the keyword \texttt{original} in FeatureHouse?
+			How does this differ from Java's \texttt{super} keyword?
+		}{
+			Was ist der Zweck des Schlüsselworts \texttt{original} in FeatureHouse?
+			Wie unterscheidet es sich vom \texttt{super}-Schlüsselwort in Java?
+		}
+
+		\item \t{
+			Suppose you compose the features in the order
+			$$[\texttt{Game}, \texttt{Multiplayer}, \texttt{Achievements}]$$
+			using FeatureHouse, how is the composition performed?
+			Show the final composed source code.
+		}{
+			Angenommen, du komponierst die Features in der Reihenfolge
+			$$[\texttt{Game}, \texttt{Multiplayer}, \texttt{Achievements}]$$
+			mit FeatureHouse, wie wird die Komposition durchgeführt?
+			Zeige den finalen komponierten Quelltext.
+		}
+
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Does the order of feature composition matter in this example?
+		}{
+			Ist die Reihenfolge der Feature-Komposition in diesem Beispiel wichtig?
+		}
+
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+
+		\item \t{
+			The code example above contains a variability bug.
+			Can you identify and fix it?
+		}{
+			Das obige Codebeispiel enthält einen Variabilitäts-Bug.
+			Kannst du ihn identifizieren und beheben?
+		}
+
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+	\end{enumerate}
+}
+
+\deftask{LanguagesAOPFundamentals}
+{\t{Aspect-Oriented Programming Fundamentals}{Grundlagen zu aspektorientierter Programmierung}}{
+	\begin{enumerate}
+		\item \t{
+			What is the core idea of \emph{aspect-oriented programming} (AOP)?
+			Provide a concrete example in (pseudo-)code that shows how AOP handles cross-cutting concerns differently from traditional object-oriented programming (OOP).
+		}{
+			Was ist die Grundidee der \emph{aspektorientierten Programmierung} (AOP)?
+			Gib ein konkretes Beispiel in (Pseudo-)Code an, das zeigt, wie AOP querschneidende Belange anders handhabt als die traditionelle objektorientierte Programmierung (OOP).
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		\item \t{
+			Define the following terms and explain how they relate to AOP:
+			\emph{aspect}, \emph{pointcut}, \emph{join point}, \emph{advice}, \emph{inter-type declaration}, and \emph{quantification}.
+		}{
+			Definiere die folgenden Begriffe und erkläre, wie sie mit AOP zusammenhängen:
+			\emph{Aspekt}, \emph{Pointcut}, \emph{Join Point}, \emph{Advice}, \emph{Inter-Typ-Deklaration} und \emph{Quantifizierung}.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		\item \t{
+			What is the \emph{fragile-pointcut problem} in AOP?
+			When does it occur? Can it be avoided? How does it relate to \emph{obliviousness}?
+			Use an example to illustrate your explanation.
+		}{
+			Was ist das \emph{Fragile-Pointcut-Problem} in AOP?
+			Wann tritt es auf? Kann es vermeidet werden? Wie hängt es mit \emph{Obliviousness} zusammen?
+			Verwende ein Beispiel, um deine Erklärung zu veranschaulichen.
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+	\end{enumerate}
+}
+
+\deftask{LanguagesAspectJPointcuts}
+{\t{%
+	AspectJ: Pointcut Matching and Advice Application
+}{%
+	AspectJ: Pointcut-Matching und Advice-Anwendung
+}}{
+	\t{Consider the following class:}{Betrachte die folgende Klasse:}
+
+	\myexample{\t{
+		Handling payment operations with logging and error handling
+	}{
+		Abwicklung von Zahlungsvorgängen mit Logging und Fehlerbehandlung
+	}}{
+		\includegraphics{code-aspectj-payment}
+	}
+
+	\begin{enumerate}
+		\item \t{
+			Write pointcuts\footnote{\url{https://eclipse.dev/aspectj/doc/released/progguide/semantics-pointcuts.html}} that match the following join points:
+			\begin{enumerate}
+				\item Any call to \texttt{processPayment(..)} from outside the \texttt{PaymentProcessor} class.
+				\item Any execution of the method \texttt{logTransaction()}.
+				\item The constructor call \texttt{new PaymentProcessor(..)} but only when it is triggered from a class in the \texttt{admin.*} package.
+			\end{enumerate}
+		}{
+			Schreibe Pointcuts,\footnote{\url{https://eclipse.dev/aspectj/doc/released/progguide/semantics-pointcuts.html}} die Folgende Join Points erfassen:
+			\begin{enumerate}
+				\item Jeden Aufruf von \texttt{processPayment(..)} von außerhalb der \texttt{PaymentProcessor}-Klasse.
+				\item Jede Ausführung der Methode \texttt{logTransaction()}.
+				\item Den Konstruktoraufruf \texttt{new PaymentProcessor(..)}, aber nur wenn er von einer Klasse im \texttt{admin.*}-Package aufgerufen wird.
+			\end{enumerate}
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+
+		\item \t{
+			Explain the difference between \texttt{call} and \texttt{execution}.
+			In which situations would you use one over the other?
+		}{
+			Erkläre den Unterschied zwischen \texttt{call} und \texttt{execution}.
+			In welchen Situationen würdest du was verwenden?
+		}
+		\begin{solution}
+REDACTED
+		\end{solution}
+		\item \t{
+			Refactor the code using AspectJ so that the following behavior is moved to advice:
+			\begin{itemize}
+				\item Logging when payment processing ends.
+				\item Exception handling during payment processing.
+			\end{itemize}
+
+			Provide both the modified class and the aspect definition.
+		}{
+			Refaktoriere den Code mit AspectJ, sodass folgendes Verhalten in mehrere Advice verschoben wird:
+			\begin{itemize}
+				\item Logging, wenn die Zahlungsabwicklung endet.
+				\item Fehlerbehandlung während der Zahlungsabwicklung.
+			\end{itemize}
+
+			Gib sowohl die modifizierte Klasse als auch die Aspekt-Definition an.
+		}
+
+	\end{enumerate}
+
+	\begin{solution}
+REDACTED
+	\end{solution}
+}
+
+\deftask{LanguagesComparison}
+{\t{%
+	Comparison of Variability Implementation Techniques
+}{%
+	Vergleich von Implementierungstechniken für Variabilität
+}}{
+	\t{
+		Compared to previous implementation techniques, to what extent are FOP and AOP a solution for cross-cutting concerns, feature traceability, and the preplanning problem?
+		When would you (not) resort to FOP or AOP but to a different technique?
+	}{
+		Verglichen mit den bisherigen Implementierungstechniken, inwiefern sind FOP und AOP eine Lösung für querschneidende Belange, Feature Traceability und das Preplanning-Problem?
+		Wann würdest du (nicht) auf FOP oder AOP zurückgreifen, sondern auf eine andere Technik?
+	}
+	\begin{solution}
+REDACTED
+	\end{solution}
+}

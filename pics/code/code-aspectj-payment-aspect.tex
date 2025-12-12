@@ -1,0 +1,42 @@
+\documentclass{standalone}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\input{../Course-on-Software-Product-Lines/slides/template/colorscheme}
+
+\lstdefinestyle{javawithpp}{
+	language=Java,
+	tabsize=2,
+	breaklines=true,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color{blue}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	commentstyle=\color{Purple}\ttfamily,
+	showstringspaces=false,
+	columns=fullflexible
+}
+
+\begin{document}
+	\begin{lstlisting}[style=javawithpp]
+		public aspect PaymentAspect {
+			pointcut paymentMethods(String user, double amount) :
+			execution(* PaymentProcessor.processPayment(String, double)) &&
+			args(user, amount);
+			
+			before(String user, double amount) : paymentMethods(user, amount) {
+				System.out.println("Start processing for " + user);
+			}
+			
+			after(String user, double amount) : paymentMethods(user, amount) {
+				System.out.println("Finished processing for " + user);
+			}
+			
+			around() : execution(* PaymentProcessor.processPayment(..)) {
+				try {
+					proceed();
+				} catch (Exception e) {
+					System.err.println("Advice caught error: " + e.getMessage());
+				}
+			}
+		}
+	\end{lstlisting}
+\end{document}

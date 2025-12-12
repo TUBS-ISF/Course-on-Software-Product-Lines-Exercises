@@ -1,0 +1,198 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{template/setup}
+
+\newcommand{\theexercise}{8}
+% \enablegerman
+% \enableoverview
+% \enablesolution
+
+\author{Ruben Dunkel, Sebastian Krieter}
+\title{\t{Software Product Lines}{Software-Produktlinien}}
+\newcommand{\theuniversity}{braunschweig}
+\newcommand{\thesemester}{\t{Winter Term}{Wintersemester} 2025/26}
+\newcommand{\theroom}{IZ 161}
+
+\input{template/exercise}
+\input{tasks/tasks}
+
+\begin{document}
+
+\exercise{1}{\t{Introduction}{Einführung}}{\t{Discussed on}{Wird besprochen am} 2025-10-30}{
+	\IntroductionBackpackCustomization[]
+	\IntroductionFastfoodCustomization[]
+	\IntroductionSoftwareProductLines[]
+	\IntroductionSPLPromises[]
+	\IntroductionSPLChallenges[]
+}
+
+\exercise{2}{\t{Runtime Variability and Design Patterns}{Laufzeitvariabilität und Entwurfsmuster}}{\t{Discussed on}{Wird besprochen am} 2025-11-11}{
+	\RuntimeVariabilityConfiguration[]
+	\RuntimeVariabilityRealization[]
+	\RuntimeDesignPatterns[]
+	\RuntimeDesignPatternsGameAudio[]
+}
+
+\exercise{3}{\t{Compile-Time Variability with Clone-and-Own}{Variabilität zur Übersetzungszeit mit Clone-and-Own}}{\t{Discussed on}{Wird besprochen am} 2025-11-13}{
+	\CloneAndOwnFundamentals[]
+	\CloneAndOwnStrategicDecisions[]
+	\CloneAndOwnVersionControlSystems[]
+	\CloneAndOwnBuildSystems[]
+	\CloneAndOwnComparison[]
+}
+
+\exercise{4}{\t{Feature Modeling}{Feature-Modellierung}}{\t{Discussed at}{Wird besprochen am} 2025-11-20}{
+	\ModelingFundamentals[]
+	\ModelingAnalysis[]
+	\ModelingTransformation[]
+	\ModelingDerivation[]
+	\ModelingCountSubwaySandwiches[]
+	% \BonusFeatureIDESetup[keine Votierung]
+	% \PraxisFeatureModellierung[Abgabe verpflichtend]
+}
+
+\exercise{5}{\t{Techniques for Compile-Time Features}{Techniken für Variabilität zur Übersetzungszeit}}{\t{Discussed at}{Wird besprochen am} 2025-11-27}{
+	\ConditionalPreprocessor[]
+	\ConditionalLinuxKernel[]
+	\ConditionalFeatureTraceability[]
+ 	\ConditionalComparison[]
+}
+
+\exercise{6}{\t{Techniques for Modular Variability}{Techniken für modulare Variabilität}}{\t{Discussed at}{Wird besprochen am} 2025-12-04}{
+	% Elias: revised tasks for exercises 6-8 available in 2025w-Magdeburg
+	\ModularFundamentals[]
+	\ModularComponentGranularity[]
+	\ModularServiceComposition[]
+	\ModularFramework[]
+	\ModularComparison[]
+%	\newpage
+%	\PracticeDevelopSPL[Abgabe \underline{verpflichtend} für M.Sc.] % discussion in the last exercise
+}
+
+
+\exercise{7}{\t{Language-Based Techniques}{Sprachbasierte Techniken}}{\t{Discussed at}{Wird besprochen am} 2025-12-16}{
+	\LanguagesFOPFundamentals[]
+	\LanguagesFeatureHouseComposition[]
+	\LanguagesAOPFundamentals[]
+	\LanguagesAspectJPointcuts[]
+	\LanguagesComparison[]
+	%\newpage
+	%\ProcessChart[Abgabe \underline{verpflichtend} für alle] % discussion in the last exercise
+}
+
+\exercise{8}{\t{Development Process}{Entwicklungsprozess}}{\t{Discussed at}{Wird besprochen am} 2025-12-18}{
+	\ProcessDomainApplicationEngineering[]
+	\ProcessAdoptionStrategies[]
+	\ProcessCostAnalysis[]
+	\ProcessScenarios[]
+	\includepdf[pages=-]{../pics/papers/Krueger2016.pdf} % attach paper for cost analysis task
+}
+
+\exercise{9}{\t{Feature Interactions}{Feature-Interaktionen}}{\t{Discussed at}{Wird besprochen am} 2026-01-08}{
+%	% 2024w tasks:
+%	\InteractionsExplainInteractions[]
+%	\InteractionsExplainDependencies[]
+%	\InteractionsExplainSolutions[]
+%	\InteractionsInPractice[]
+%	\newpage
+%	\ProcessConclusionImplementationTechniques[Abgabe verpflichtend]
+	% 2025w tasks:
+	%%% These tasks are a bit abstract and boring.
+	%%% It would be great to have at least one more concrete task with some code examples.
+	\InteractionsExplainInteractions[]
+%	 \InteractionsExplainDependencies[]
+%	\FeatureInteractionClassification[]
+	\BugAnalysisFromVBDb[]
+	\FeatureInteractionStrategies[]
+	\FeatureInteractionDebugging[]
+%	\InteractionsExplainSolutions[]
+%	\InteractionsInPractice[]
+
+%\textbf{}\\
+%\paragraph{Further Input}
+%	Two keynotes on the (broader) topic of feature interactions were given at key software engineering conferences which serve as further (practical) examples of feature interactions and how to address them:
+%	\begin{itemize}
+%		\item Joanne Atlee, ESEC/FSE 2019 ({\small about the Boeing 737 MAX}): \url{https://www.uttv.ee/naita?id=28730}
+%		\item Thomas Thüm, SPLC 2021: \url{https://www.youtube.com/watch?v=qUuRp7_d0rU}
+%	\end{itemize}
+}
+
+\exercise{10}{\t{Product-Line Analyses}{Analyse von Produktlinien}}{\t{Discussed at}{Wird besprochen am} 2026-01-20}{
+%	% 2024w tasks:
+%	\AnalysisPracticeFeatureModel[]
+%	\AnalysisExplainFMEvolution[]
+%	\AnalysisExplainFeatureMapping[]
+%	\AnalysisPaperNPCompleteness[]
+	% 2025w tasks:
+	\DeadSuperfluousAnalysis[]
+
+%	\FeatureModelConfigAnalysis[]  % removed as of SoSe 25 can be added later
+%	\AnalysisPracticeFeatureModel[]
+%	\AnalysisExplainFMEvolution[] %% asking this here was a mistake! This task belongs to lecture 12! The other tasks take a very long time to discuss anyway
+%	\AnalysisExplainFeatureMapping[]
+%	\SecureAuthFeatureAnalysis[]
+	\CompareAnalysisStrategies[]
+	\ProblemSolutionMisalignment[]
+%	\FeatureMappingAnalysisSAT[]
+	% \AnalysisPaperNPCompleteness[optional]
+	\FeatureInteractionAnalysis[]
+
+}
+\exercise{11}{\t{Product-Line Testing}{Testen von Produktlinien}}{\t{Discussed at}{Wird besprochen am} 2026-01-22}{
+%	% 2024w tasks:
+%	\TestingFeatureInteractionExplain[]
+%	\TestingSolutionSpaceMix[]
+	% 2025w tasks:
+	\TestingFeatureInteraction[]
+%	\FeatureInteractionCoverageDesign[]
+	\SolutionSpaceCoverageDesign[]
+	\CriticalReflectionOnSampling[]
+	%	\TestingFeatureInteractionExplain[]
+	%	\medspace
+	%	\TestingSolutionSpaceMix[]
+}
+
+\exercise{12}{\t{Evolution and Maintenance}{Evolution und Wartung}}{\t{Discussed at}{Wird besprochen am} 2026-01-29}{
+%	% 2024w tasks:
+%	% possibly omit this exercise (and treat tasks as voted?). or combine it with the previous one?
+%	\RefactoringExplainRefactoring[]
+%	\RefactoringExplainSPLRefactoring[]
+	% 2025w tasks:
+	\ProcessExplainDomainApplicationEngineeringRefined[] % move to ex 8 from WiSe25 onwards
+%	\RefactoringExplainRefactoring[]
+%	\RefactoringExplainSPLRefactoring[]
+	\FeatureModelChangeSequence[]
+%	\FeatureModelEditClassification[]
+%	\CoEvolutionInconsistency[]
+
+	\DifferenceBetweenMaintenanceAndEvolution[]
+%	\MaintenanceClassification[]
+	\ReengineeringVariantsToProductLine[]
+}
+
+% \exercisewithinfo{13}{\t{Q\&A - Research Input?}{``Fragestunde''}}{\t{Discussed at}{Wird besprochen am} ???}{
+% }
+
+\exercise{P1a}{\t{Practical Exercise 1a}{Praktische Aufgabe 1a}}{\t{Submit:}{Einreichung:} 2025-11-04, \t{Discuss:}{Besprechung:} 2025-11-06}{
+	\PracticeAccessCalculatorGit[Deadline: 2025-10-28]
+	\PracticeSetupCalculatorGit[]
+	\PracticeDevelopCalculatorFeature[]
+	\PracticeDeleteCalculatorFeature[]
+	\PracticeSubmitCalculator[Deadline: 2025-11-04]
+}
+
+\exercise{P1b}{\t{Practical Exercise 1b}{Praktische Aufgabe 1b}}{\t{Submit:}{Einreichung:} 2025-11-11, \t{Discuss:}{Besprechung:} 2025-11-13}{
+	\PracticeIntegrateOtherFeature[]
+	\PracticeRemoveOtherFeature[]
+	\PracticeCalculatorShareExperiences[]
+}
+
+\exercise{P2}{\t{Developing SPLs with Various Techniques}{Entwicklung von SPLs mit verschiedenen Techniken}}{\t{Check tasks for specific deadlines}{Siehe konkrete Aufgaben für Deadlines}}{
+	\PracticeDevelopSPLsIntroduction[]
+	\PracticeDevelopSPLDomainAnalysis[Deadline: 2025-11-18]
+	\PracticeDevelopSPLRuntimeVariability[Deadline: 2025-12-02]
+	\PracticeDevelopSPLPreprocessing[Deadline: 2025-12-16]
+	\PracticeDevelopSPLBlackboxFramework[Deadline: 2026-01-13]
+}
+
+\end{document}
