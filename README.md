@@ -2,12 +2,12 @@
 
 **[Open educational resources](https://en.wikipedia.org/wiki/Open_educational_resources) on software product lines**
 
-* [LaTeX Slides](https://github.com/SoftVarE-Group/Course-on-Software-Product-Lines): Material for lectures on software product lines 
+* [LaTeX Slides](https://github.com/TUBS-ISF/Course-on-Software-Product-Lines): Material for lectures on software product lines 
 * **LaTeX Exercises**: Material for exercises on software product lines (available on request)
-* [PDF Slides](https://github.com/SoftVarE-Group/Slides-of-the-SPL-Course): Released version of slides for the lecture on software product lines
+* [PDF Slides](https://github.com/TUBS-ISF/Course-on-Software-Product-Lines-Slides): Released version of slides for the lecture on software product lines
 * [Recordings](https://www.youtube.com/playlist?list=PL4hJhdKDPIxha8So7muX2zfNUU8NBoiu3): YouTube playlist with lecture recordings
 
-*If you have any feedback, please contact [Thomas Thüm](mailto:thomas.thuem@uni-ulm.de).*
+*If you have any feedback, please contact [Thomas Thüm](mailto:t.thuem@tu-braunschweig.de).*
 
 ## Contact
 
@@ -27,7 +27,7 @@ Further contributors and former project members:
 ## Getting Started
 
 ```
-git clone --recursive https://github.com/SoftVarE-Group/Course-on-Software-Product-Lines-Exercises.git
+git clone --recursive https://github.com/TUBS-ISF/Course-on-Software-Product-Lines-Exercises.git
 cd Course-on-Software-Product-Lines-Exercises/exercises
 ./compile_semester.sh <semester>-<university> # to compile all exercises
 ```
@@ -39,7 +39,7 @@ Alternatively, copy a file `exercises/<semester>-<uni>.tex` to your own universi
 - `\enablesolution`:
 	For most tasks, we also prepared solution sketches, which can be shown with this command.
 	However, we do not include any solutions in the public GitHub repository.
-	If you are a teacher and want access to the private repository, please [contact us](mailto:thomas.thuem@uni-ulm.de).
+	If you are a teacher and want access to the private repository, please [contact us](mailto:t.thuem@tu-braunschweig.de).
 - `\enablegerman`:
 	We translated all tasks into both English and German, which can be switched with this command.
 	All solutions are given in English.
