@@ -34,6 +34,8 @@ cd Course-on-Software-Product-Lines-Exercises/exercises
 
 Alternatively, copy a file `exercises/<semester>-<uni>.tex` to your own university and semester, make adjustments, and compile as usual with LaTeX.
 
+Precompiled exercise sheets are available [here](https://github.com/TUBS-ISF/Course-on-Software-Product-Lines-Slides).
+
 **Configuration Options**
 
 - `\enablesolution`:
